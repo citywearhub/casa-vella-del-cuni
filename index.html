@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Vella del Cuní — Masia rural a Roda de Ter, Osona</title>
+  <meta name="description" content="Casa rural de turisme a Roda de Ter (Osona). Masia del 1682 restaurada amb piscina privada, jardí i entorn idíl·lic. Reserva ara al 630 936 545.">
+  <meta name="keywords" content="casa rural, Roda de Ter, Osona, masia, turisme rural, Catalunya, piscina privada, rural house Spain, 西班牙农庄, スペイン農家民宿, 스페인 농가 민박, บ้านพักชนบทสเปน, 飞猪民宿, 卡萨维利亚, rural house Barcelona, masia near Barcelona, Catalonia farmhouse, 巴塞罗那郊区民宿, バルセロナ近郊農家民宿, 바르셀로나 농가 민박, บ้านพักใกล้บาร์เซโลนา">
+  <link rel="canonical" href="https://casa-vella-del-cuni.vercel.app/">
+  <link rel="alternate" hreflang="ca" href="https://casa-vella-del-cuni.vercel.app/">
+  <link rel="alternate" hreflang="es" href="https://casa-vella-del-cuni.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://casa-vella-del-cuni.vercel.app/">
+  <link rel="alternate" hreflang="zh" href="https://casa-vella-del-cuni.vercel.app/">
+  <link rel="alternate" hreflang="ja" href="https://casa-vella-del-cuni.vercel.app/">
+  <link rel="alternate" hreflang="ko" href="https://casa-vella-del-cuni.vercel.app/">
+  <link rel="alternate" hreflang="x-default" href="https://casa-vella-del-cuni.vercel.app/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Casa Vella del Cuní",
+    "description": "Masia catalana del 1682 restaurada a Roda de Ter (Osona). Casa rural amb piscina privada, jardí i entorn natural idíl·lic.",
+    "url": "https://casa-vella-del-cuni.vercel.app/",
+    "telephone": "+34630936545",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Roda de Ter",
+      "addressRegion": "Osona",
+      "addressCountry": "ES"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.992,
+      "longitude": 2.301
+    },
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Piscina privada", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "WiFi gratuït", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Aparcament privat", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Jardí", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Cuina equipada", "value": true}
+    ],
+    "checkinTime": "11:00",
+    "checkoutTime": "17:00",
+    "petsAllowed": false
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --bg-2: #F0EBE1;
+      --ink: #2C1810;
+      --ink-2: #5C3D2E;
+      --ink-3: #8B6355;
+      --accent: #6B7C4A;
+      --accent-2: #4A5C32;
+      --accent-lt: #EEF1E8;
+      --stone: #C4A882;
+      --border: #DDD5C8;
+      --radius: 6px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    .scroll-bar {
+      position: fixed; top: 0; left: 0; z-index: 200;
+      height: 3px; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--stone));
+      transition: width .08s linear;
+      pointer-events: none;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      padding: 0 40px;
+      background: transparent;
+      transition: background .3s, box-shadow .3s, border-color .3s;
+      border-bottom: 1px solid transparent;
+    }
+    header.scrolled {
+      background: rgb(250,247,242);
+      border-color: var(--border);
+      box-shadow: 0 2px 16px rgba(44,24,16,.10);
+    }
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; flex-shrink: 0;
+    }
+    .logo img {
+      height: 44px; width: auto;
+    }
+    .logo-text {
+      font-family: 'Playfair Display', serif;
+      font-size: .95rem; font-weight: 600;
+      color: #fff; letter-spacing: .3px;
+      line-height: 1.2;
+      transition: color .3s;
+    }
+    .logo-text small {
+      display: block; font-family: 'Inter', sans-serif;
+      font-size: .6rem; font-weight: 400;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      color: rgba(255,255,255,.7); margin-top: 2px;
+      transition: color .3s;
+    }
+    header.scrolled .logo-text { color: var(--ink); }
+    header.scrolled .logo-text small { color: var(--ink-3); }
+
+    /* Nav */
+    .nav { display: flex; align-items: center; gap: 20px; }
+    .nav a {
+      font-size: .72rem; font-weight: 500;
+      letter-spacing: .5px; text-transform: uppercase;
+      color: rgba(255,255,255,.85); text-decoration: none;
+      transition: color .2s;
+      position: relative;
+    }
+    .nav a::after {
+      content: ''; position: absolute;
+      bottom: -4px; left: 0; width: 0; height: 1.5px;
+      background: #fff;
+      transition: width .25s ease;
+    }
+    .nav a:hover { color: #fff; }
+    .nav a:hover::after { width: 100%; }
+    header.scrolled .nav a { color: var(--ink-3); }
+    header.scrolled .nav a::after { background: var(--accent); }
+    header.scrolled .nav a:hover { color: var(--ink); }
+
+    .btn-header {
+      background: var(--accent); color: #fff;
+      border: none; border-radius: var(--radius);
+      padding: 10px 22px; font-size: .78rem; font-weight: 600;
+      text-decoration: none; letter-spacing: .5px;
+      font-family: 'Inter', sans-serif;
+      transition: background .2s, transform .15s;
+    }
+    .btn-header:hover { background: var(--accent-2); transform: translateY(-1px); }
+
+    /* ── LANG SWITCHER ── */
+    .lang-switcher {
+      display: flex; align-items: center; gap: 4px;
+      margin-left: 20px; flex-shrink: 0;
+    }
+    .lang-btn {
+      background: none; border: 1px solid transparent;
+      border-radius: 4px; padding: 4px 7px;
+      font-size: .68rem; font-weight: 600;
+      color: var(--ink-3); cursor: pointer;
+      letter-spacing: .3px; font-family: 'Inter', sans-serif;
+      transition: color .2s, border-color .2s, background .2s;
+      white-space: nowrap;
+    }
+    .lang-btn:hover { color: var(--ink); border-color: var(--border); }
+    .lang-btn.active {
+      color: var(--accent); border-color: var(--accent);
+      background: var(--accent-lt);
+    }
+
+    /* Mobile menu */
+    .menu-btn {
+      display: none; background: none; border: none;
+      cursor: pointer; padding: 8px; flex-direction: column; gap: 5px;
+    }
+    .menu-btn span {
+      display: block; width: 24px; height: 2px;
+      background: var(--ink); border-radius: 2px;
+      transition: transform .3s, opacity .3s;
+    }
+    .menu-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .menu-btn.open span:nth-child(2) { opacity: 0; }
+    .menu-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-nav {
+      display: none; position: fixed;
+      top: 72px; left: 0; right: 0; bottom: 0;
+      background: var(--bg); z-index: 99;
+      padding: 40px 24px;
+      flex-direction: column; gap: 0;
+      opacity: 0; transform: translateY(-12px);
+      transition: opacity .3s, transform .3s;
+    }
+    .mobile-nav.open {
+      display: flex;
+      opacity: 1; transform: translateY(0);
+    }
+    .mobile-nav a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 600;
+      color: var(--ink-2); text-decoration: none;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+    }
+    .mobile-nav a:hover { color: var(--accent); }
+    .mobile-nav .btn-mobile-cta {
+      margin-top: 32px;
+      background: var(--accent); color: #fff;
+      border-radius: var(--radius);
+      padding: 16px 28px; text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem; font-weight: 600;
+      border-bottom: none;
+    }
+    .mobile-lang {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-top: 28px; padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .mobile-lang .lang-btn {
+      font-size: .75rem; padding: 6px 10px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100svh;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('Fotos Casa Vella/IMG_1734.png');
+      background-size: cover; background-position: center 40%;
+      filter: brightness(.55);
+    }
+    .hero-grain {
+      position: absolute; inset: 0;
+      background: repeating-conic-gradient(rgba(44,24,16,.03) 0% 25%, transparent 0% 50%) 0 0 / 4px 4px;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; width: 100%;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .7rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 24px;
+      opacity: 0; transform: translateY(12px);
+    }
+    .hero-badge-line { width: 32px; height: 1px; background: var(--stone); }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 5.2rem);
+      font-weight: 700; line-height: 1.05;
+      color: #fff; letter-spacing: -.5px;
+      margin-bottom: 20px;
+      opacity: 0; transform: translateY(24px);
+    }
+    .hero h1 em {
+      font-style: italic; color: var(--stone);
+      font-weight: 400;
+    }
+    .hero-sub {
+      font-size: clamp(.95rem, 1.2vw, 1.15rem);
+      color: rgba(255,255,255,.75);
+      max-width: 520px; line-height: 1.8;
+      margin-bottom: 36px;
+      opacity: 0; transform: translateY(16px);
+    }
+    .hero-actions {
+      display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
+      opacity: 0; transform: translateY(16px);
+    }
+    .btn-cta {
+      background: var(--accent); color: #fff;
+      border-radius: var(--radius); padding: 16px 32px;
+      font-size: .9rem; font-weight: 600;
+      text-decoration: none; font-family: 'Inter', sans-serif;
+      letter-spacing: .3px;
+      transition: background .2s, transform .15s;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-cta:hover { background: var(--accent-2); transform: translateY(-2px); }
+    .btn-cta svg { width: 16px; height: 16px; }
+    .btn-ghost-hero {
+      color: rgba(255,255,255,.8);
+      font-size: .9rem; font-weight: 500;
+      text-decoration: none; font-family: 'Inter', sans-serif;
+      padding: 16px 4px;
+      border-bottom: 1px solid rgba(255,255,255,.3);
+      transition: color .2s, border-color .2s;
+    }
+    .btn-ghost-hero:hover { color: #fff; border-color: rgba(255,255,255,.7); }
+
+    /* ── MARQUEE STRIP ── */
+    .strip {
+      background: var(--ink);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+    .strip-inner {
+      display: flex; gap: 40px; align-items: center;
+      width: max-content;
+      animation: marquee 35s linear infinite;
+    }
+    .strip-inner span {
+      font-family: 'Playfair Display', serif;
+      font-size: .85rem; font-weight: 400;
+      color: rgba(255,255,255,.7);
+      white-space: nowrap;
+      letter-spacing: .5px;
+    }
+    .strip-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: var(--stone); flex-shrink: 0;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 100px 40px;
+    }
+    .section-alt { background: var(--bg-2); }
+    .section-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .section-label-line { width: 28px; height: 1.5px; background: var(--accent); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 700; line-height: 1.15;
+      color: var(--ink); letter-spacing: -.3px;
+      margin-bottom: 20px;
+    }
+    .section-desc {
+      font-size: 1rem; color: var(--ink-2);
+      line-height: 1.85; max-width: 560px;
+    }
+
+    /* ── LA CASA ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .about-text p {
+      font-size: .95rem; color: var(--ink-2);
+      line-height: 1.9; margin-bottom: 20px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-highlight {
+      display: flex; gap: 40px; margin-top: 36px;
+      padding-top: 28px; border-top: 1px solid var(--border);
+    }
+    .about-stat {
+      text-align: center;
+    }
+    .about-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem; font-weight: 700;
+      color: var(--accent); line-height: 1;
+    }
+    .about-stat-label {
+      font-size: .72rem; font-weight: 500;
+      color: var(--ink-3); letter-spacing: 1px;
+      text-transform: uppercase; margin-top: 6px;
+    }
+    .about-img-wrap {
+      position: relative; border-radius: 8px; overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .about-img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block;
+    }
+    .about-img-accent {
+      position: absolute; bottom: -12px; right: -12px;
+      width: 120px; height: 120px;
+      border: 3px solid var(--accent);
+      border-radius: 8px; z-index: -1;
+    }
+
+    /* ── GALERIA CAROUSEL ── */
+    .gallery-group { margin-bottom: 48px; }
+    .gallery-group:last-child { margin-bottom: 0; }
+    .gallery-group-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .gallery-group-label {
+      display: flex; align-items: center; gap: 16px; flex: 1;
+    }
+    .gallery-group-label span {
+      font-size: .68rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--accent);
+      white-space: nowrap;
+    }
+    .gallery-group-label::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+    .carousel-arrows { display: flex; gap: 8px; margin-left: 16px; }
+    .carousel-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--bg);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: background .2s, border-color .2s;
+      flex-shrink: 0;
+    }
+    .carousel-btn:hover { background: var(--accent); border-color: var(--accent); }
+    .carousel-btn:hover svg { stroke: #fff; }
+    .carousel-btn svg { width: 16px; height: 16px; stroke: var(--ink-2); fill: none; stroke-width: 2; transition: stroke .2s; }
+    .carousel-track-wrap { overflow: hidden; }
+    .carousel-track {
+      display: flex; gap: 16px;
+      transition: transform .45s cubic-bezier(.16,1,.3,1);
+    }
+    @keyframes scroll-ltr {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    @keyframes scroll-rtl {
+      from { transform: translateX(-50%); }
+      to   { transform: translateX(0); }
+    }
+    .carousel-track.auto-ltr {
+      animation: scroll-ltr 40s linear infinite;
+      transition: none;
+      width: max-content;
+    }
+    .carousel-track.auto-rtl {
+      animation: scroll-rtl 40s linear infinite;
+      transition: none;
+      width: max-content;
+    }
+    .carousel-track-wrap:hover .carousel-track,
+    .carousel-track-wrap:focus-within .carousel-track {
+      animation-play-state: paused;
+    }
+    .gallery-item {
+      position: relative; border-radius: 8px;
+      overflow: hidden; aspect-ratio: 4/3;
+      cursor: pointer; flex: 0 0 370px;
+      width: 370px;
+    }
+    @media (max-width: 900px) {
+      .gallery-item { flex: 0 0 280px; width: 280px; }
+    }
+    @media (max-width: 600px) {
+      .gallery-item { flex: 0 0 220px; width: 220px; }
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform .5s cubic-bezier(.16,1,.3,1);
+    }
+    .gallery-item:hover img { transform: scale(1.05); }
+    .gallery-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(44,24,16,.6) 0%, transparent 50%);
+      opacity: 0; transition: opacity .35s;
+      display: flex; align-items: flex-end; padding: 20px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-overlay span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: #fff; font-weight: 600;
+    }
+
+    /* ── ENTORN CARDS ── */
+    .entorn-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .entorn-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px 24px;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      text-align: center;
+    }
+    .entorn-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(44,24,16,.08);
+      border-color: var(--accent);
+    }
+    .entorn-icon {
+      width: 48px; height: 48px;
+      margin: 0 auto 18px;
+      background: var(--accent-lt);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .entorn-card:hover .entorn-icon { background: var(--accent); }
+    .entorn-icon svg {
+      width: 22px; height: 22px;
+      stroke: var(--accent);
+      fill: none; stroke-width: 1.8;
+      transition: stroke .2s;
+    }
+    .entorn-card:hover .entorn-icon svg { stroke: #fff; }
+    .entorn-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .entorn-card p {
+      font-size: .82rem; color: var(--ink-3);
+      line-height: 1.7;
+    }
+
+    /* ── SERVEIS ── */
+    .serveis-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .servei-item {
+      text-align: center; padding: 32px 16px;
+      border-radius: 8px;
+      background: var(--accent-lt);
+      transition: background .2s, transform .2s;
+    }
+    .servei-item:hover {
+      background: var(--accent);
+      transform: translateY(-3px);
+    }
+    .servei-item:hover .servei-icon svg { stroke: #fff; }
+    .servei-item:hover h4 { color: #fff; }
+    .servei-item:hover p { color: rgba(255,255,255,.8); }
+    .servei-icon {
+      margin: 0 auto 14px;
+    }
+    .servei-icon svg {
+      width: 32px; height: 32px;
+      stroke: var(--accent); fill: none;
+      stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+      transition: stroke .2s;
+    }
+    .servei-item h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: .95rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 4px;
+      transition: color .2s;
+    }
+    .servei-item p {
+      font-size: .75rem; color: var(--ink-3);
+      transition: color .2s;
+    }
+
+    /* ── CONTACTE ── */
+    .contacte-wrap {
+      text-align: center;
+    }
+    .contacte-subtitle {
+      font-size: 1.05rem; color: var(--ink-2);
+      line-height: 1.8; max-width: 520px;
+      margin: 0 auto 40px;
+    }
+    .contacte-subtitle strong {
+      color: var(--accent); font-weight: 600;
+    }
+    .contacte-buttons {
+      display: flex; gap: 20px;
+      justify-content: center; flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .btn-whatsapp {
+      background: #25D366; color: #fff;
+      border-radius: var(--radius); padding: 18px 36px;
+      font-size: .95rem; font-weight: 600;
+      text-decoration: none; font-family: 'Inter', sans-serif;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: background .2s, transform .15s;
+    }
+    .btn-whatsapp:hover { background: #1fb855; transform: translateY(-2px); }
+    .btn-whatsapp svg { width: 20px; height: 20px; fill: #fff; }
+    .btn-phone {
+      background: var(--ink); color: #fff;
+      border-radius: var(--radius); padding: 18px 36px;
+      font-size: .95rem; font-weight: 600;
+      text-decoration: none; font-family: 'Inter', sans-serif;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: background .2s, transform .15s;
+    }
+    .btn-phone:hover { background: var(--ink-2); transform: translateY(-2px); }
+    .btn-phone svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; }
+    .contacte-note {
+      font-size: .85rem; color: var(--ink-3);
+      font-style: italic;
+    }
+    .contacte-info {
+      display: flex; gap: 48px; justify-content: center;
+      margin-top: 48px; padding-top: 32px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .contacte-info-item {
+      text-align: center;
+    }
+    .contacte-info-item h4 {
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--ink-3); margin-bottom: 6px;
+    }
+    .contacte-info-item p {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--ink);
+    }
+
+    /* ── BOOKING PLATFORMS ── */
+    .booking-section {
+      margin-top: 56px; padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .booking-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 600;
+      color: var(--ink); text-align: center;
+      margin-bottom: 8px;
+    }
+    .booking-section-sub {
+      font-size: .85rem; color: var(--ink-3);
+      text-align: center; margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .booking-grid {
+      display: flex; gap: 16px;
+      justify-content: center; flex-wrap: wrap;
+    }
+    .booking-card {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 8px;
+      padding: 22px 32px; min-width: 180px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      text-decoration: none; background: #fff;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+    }
+    .booking-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(44,24,16,.10);
+      border-color: var(--accent);
+    }
+    .booking-card-name {
+      font-weight: 700; font-size: 1.05rem;
+      letter-spacing: -.2px;
+    }
+    .booking-card-name.bc-blue  { color: #003580; }
+    .booking-card-name.bc-trip  { color: #0086C9; }
+    .booking-card-name.bc-ab    { color: #FF385C; }
+    .booking-card-desc {
+      font-size: .72rem; color: var(--ink-3);
+      text-align: center; line-height: 1.4;
+    }
+    .booking-card-action {
+      font-size: .75rem; color: var(--accent);
+      font-weight: 600; margin-top: 4px;
+    }
+    .booking-asia-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #FFF3CD; border: 1px solid #FFD700;
+      border-radius: 4px; padding: 4px 10px;
+      font-size: .65rem; font-weight: 700;
+      color: #856404; letter-spacing: .5px;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .booking-card-name.bc-fliggy { color: #FF6900; }
+    .booking-card-name.bc-line   { color: #06C755; }
+
+    /* ── ARRIBAR ── */
+    .arribar-grid {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 20px; margin-top: 0;
+    }
+    .arribar-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 8px; padding: 28px 22px;
+      transition: box-shadow .2s, border-color .2s;
+    }
+    .arribar-card:hover { border-color: var(--accent); box-shadow: 0 8px 28px rgba(44,24,16,.07); }
+    .arribar-icon {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--accent-lt); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .arribar-icon svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+    .arribar-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: .95rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 8px;
+    }
+    .arribar-card p { font-size: .82rem; color: var(--ink-3); line-height: 1.7; }
+    .arribar-card strong { color: var(--accent); }
+    @media (max-width: 900px) { .arribar-grid { grid-template-columns: 1fr; } }
+
+    /* ── LINE / WECHAT CONTACT ── */
+    .btn-line {
+      background: #06C755; color: #fff;
+      border-radius: var(--radius); padding: 18px 36px;
+      font-size: .95rem; font-weight: 600;
+      text-decoration: none; font-family: 'Inter', sans-serif;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: background .2s, transform .15s;
+    }
+    .btn-line:hover { background: #05a849; transform: translateY(-2px); }
+    .btn-line svg { width: 22px; height: 22px; fill: #fff; }
+
+    /* ── FAQ ACCORDION ── */
+    .faq-list { max-width: 760px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-btn {
+      width: 100%; background: none; border: none;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 22px 4px;
+      cursor: pointer; text-align: left;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--ink); line-height: 1.4;
+      transition: color .2s;
+    }
+    .faq-btn:hover { color: var(--accent); }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px;
+      border: 1.5px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s, border-color .2s, transform .3s;
+    }
+    .faq-btn:hover .faq-icon { border-color: var(--accent); }
+    .faq-icon svg { width: 12px; height: 12px; stroke: var(--ink-3); fill: none; stroke-width: 2.5; transition: stroke .2s, transform .3s; }
+    .faq-btn[aria-expanded="true"] .faq-icon { background: var(--accent); border-color: var(--accent); transform: rotate(180deg); }
+    .faq-btn[aria-expanded="true"] .faq-icon svg { stroke: #fff; }
+    .faq-body {
+      overflow: hidden; max-height: 0;
+      transition: max-height .35s cubic-bezier(.16,1,.3,1);
+    }
+    .faq-body-inner {
+      padding: 0 4px 24px;
+      font-size: .93rem; color: var(--ink-2); line-height: 1.85;
+    }
+
+    /* ── CONTACT FORM ── */
+    .booking-form {
+      max-width: 640px; margin: 48px auto 0;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 12px; padding: 40px;
+    }
+    .booking-form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 8px; text-align: center;
+    }
+    .booking-form-sub {
+      font-size: .82rem; color: var(--ink-3);
+      text-align: center; margin-bottom: 28px;
+    }
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-bottom: 16px;
+    }
+    .form-row.full { grid-template-columns: 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--ink-3);
+    }
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 12px 14px; border: 1.5px solid var(--border);
+      border-radius: var(--radius); font-size: .9rem;
+      font-family: 'Inter', sans-serif; color: var(--ink);
+      background: var(--bg); outline: none;
+      transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .btn-form-wa {
+      width: 100%; margin-top: 20px;
+      background: #25D366; color: #fff;
+      border: none; border-radius: var(--radius);
+      padding: 16px 24px; font-size: .95rem; font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      cursor: pointer; transition: background .2s, transform .15s;
+    }
+    .btn-form-wa:hover { background: #1fb855; transform: translateY(-2px); }
+    .btn-form-wa svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+    .form-note {
+      font-size: .75rem; color: var(--ink-3);
+      text-align: center; margin-top: 12px;
+      font-style: italic;
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .booking-form { padding: 28px 20px; }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 600;
+      color: rgba(255,255,255,.9);
+      margin-bottom: 12px;
+    }
+    .footer-loc {
+      font-size: .78rem; color: rgba(255,255,255,.4);
+      margin-bottom: 24px;
+    }
+    .footer-links {
+      display: flex; gap: 24px; justify-content: center;
+      margin-bottom: 24px; flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: .75rem; color: rgba(255,255,255,.45);
+      text-decoration: none; transition: color .2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,.8); }
+    .footer-copy {
+      font-size: .72rem; color: rgba(255,255,255,.25);
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed; inset: 0; z-index: 300;
+      background: rgba(44,24,16,.92);
+      backdrop-filter: blur(10px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity .35s;
+      padding: 40px;
+    }
+    .lightbox.open { opacity: 1; pointer-events: auto; }
+    .lightbox img {
+      max-width: 90vw; max-height: 85vh;
+      object-fit: contain; border-radius: 4px;
+    }
+    .lightbox-close {
+      position: absolute; top: 24px; right: 28px;
+      background: none; border: none;
+      color: rgba(255,255,255,.7); font-size: 2rem;
+      cursor: pointer; transition: color .2s;
+      line-height: 1;
+    }
+    .lightbox-close:hover { color: #fff; }
+
+    /* ── GS-HIDDEN ── */
+    .gs-hidden {
+      /* initial state set by JS so content shows if GSAP fails to load */
+    }
+    .js-anim-ready .gs-hidden {
+      opacity: 0; transform: translateY(28px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .lang-switcher { display: none; }
+      .menu-btn { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-img-wrap { max-width: 500px; }
+      .entorn-grid { grid-template-columns: repeat(2, 1fr); }
+      .serveis-grid { grid-template-columns: repeat(3, 1fr); }
+      .gallery-item { flex: 0 0 280px; width: 280px; }
+      .gallery-group-label span { font-size: .6rem; }
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 0 20px; }
+      .section { padding: 72px 24px; }
+      .hero-content { padding: 0 24px 56px; }
+      .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+      .gallery-item { flex: 0 0 260px; width: 260px; }
+      .entorn-grid { grid-template-columns: 1fr; }
+      .serveis-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-highlight { gap: 24px; }
+      .contacte-buttons { flex-direction: column; align-items: center; }
+      .contacte-info { gap: 32px; }
+      .strip-inner span { font-size: .75rem; }
+      .logo-text { display: none; }
+      .lightbox { padding: 16px; }
+      .booking-card { min-width: 140px; padding: 18px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll progress -->
+  <div class="scroll-bar" id="scrollBar"></div>
+
+  <!-- Header -->
+  <header id="header">
+    <div class="header-inner">
+      <a href="#inici" class="logo">
+        <img src="LOGO BO.png" alt="Casa Vella del Cuní">
+        <div class="logo-text">
+          Casa Vella del Cuní
+          <small>Masia del 1682</small>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="#la-casa" data-i18n="nav.la-casa">La Casa</a>
+        <a href="#habitacions" data-i18n="nav.galeria">Galeria</a>
+        <a href="#entorn" data-i18n="nav.entorn">Entorn</a>
+        <a href="#arribar" data-i18n="arribar.label">Com arribar</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contacte" data-i18n="nav.contacte">Contacte</a>
+        <a href="#contacte" class="btn-header" data-i18n="nav.reserva">Reserva ara</a>
+      </nav>
+      <div class="lang-switcher" id="langSwitcher">
+        <button class="lang-btn active" data-lang="ca" onclick="applyLang('ca')">CA</button>
+        <button class="lang-btn" data-lang="es" onclick="applyLang('es')">ES</button>
+        <button class="lang-btn" data-lang="en" onclick="applyLang('en')">EN</button>
+        <button class="lang-btn" data-lang="zh" onclick="applyLang('zh')">中文</button>
+        <button class="lang-btn" data-lang="ja" onclick="applyLang('ja')">日本語</button>
+        <button class="lang-btn" data-lang="ko" onclick="applyLang('ko')">한국어</button>
+        <button class="lang-btn" data-lang="th" onclick="applyLang('th')">ไทย</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Obrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#inici" data-i18n="nav.inici" onclick="closeMenu()">Inici</a>
+    <a href="#la-casa" data-i18n="nav.la-casa" onclick="closeMenu()">La Casa</a>
+    <a href="#habitacions" data-i18n="nav.galeria" onclick="closeMenu()">Galeria</a>
+    <a href="#entorn" data-i18n="nav.entorn" onclick="closeMenu()">Entorn</a>
+    <a href="#arribar" data-i18n="arribar.label" onclick="closeMenu()">Com arribar</a>
+    <a href="#faq" data-i18n="nav.faq" onclick="closeMenu()">FAQ</a>
+    <a href="#contacte" data-i18n="nav.contacte" onclick="closeMenu()">Contacte</a>
+    <a href="#contacte" class="btn-mobile-cta" data-i18n="nav.reserva" onclick="closeMenu()">Reserva ara</a>
+    <div class="mobile-lang">
+      <button class="lang-btn active" data-lang="ca" onclick="applyLang('ca');closeMenu()">CA</button>
+      <button class="lang-btn" data-lang="es" onclick="applyLang('es');closeMenu()">ES</button>
+      <button class="lang-btn" data-lang="en" onclick="applyLang('en');closeMenu()">EN</button>
+      <button class="lang-btn" data-lang="zh" onclick="applyLang('zh');closeMenu()">中文</button>
+      <button class="lang-btn" data-lang="ja" onclick="applyLang('ja');closeMenu()">日本語</button>
+      <button class="lang-btn" data-lang="ko" onclick="applyLang('ko');closeMenu()">한국어</button>
+      <button class="lang-btn" data-lang="th" onclick="applyLang('th');closeMenu()">ไทย</button>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="inici">
+    <div class="hero-bg"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">
+        <span class="hero-badge-line"></span>
+        Roda de Ter, Osona
+      </div>
+      <h1 id="heroH1">Casa Vella<br><em>del Cuní</em></h1>
+      <p class="hero-sub" id="heroSub" data-i18n="hero.sub">Una masia del 1682 restaurada amb cura, envoltada de natura i silenci. L'escapada rural que necessites, a la comarca d'Osona.</p>
+      <div class="hero-actions" id="heroActions">
+        <a href="#contacte" class="btn-cta">
+          <span data-i18n="hero.btn-cta">Reserva ara</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#la-casa" class="btn-ghost-hero" data-i18n="hero.btn-ghost">Descobreix la casa ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Strip -->
+  <div class="strip">
+    <div class="strip-inner">
+      <span>Piscina privada</span><div class="strip-dot"></div>
+      <span>Jardí</span><div class="strip-dot"></div>
+      <span>Masia del 1682</span><div class="strip-dot"></div>
+      <span>Roda de Ter</span><div class="strip-dot"></div>
+      <span>WiFi gratuït</span><div class="strip-dot"></div>
+      <span>Aparcament gratuït</span><div class="strip-dot"></div>
+      <span>Rupit</span><div class="strip-dot"></div>
+      <span>Monestir de Casserres</span><div class="strip-dot"></div>
+      <span>Piscina privada</span><div class="strip-dot"></div>
+      <span>Jardí</span><div class="strip-dot"></div>
+      <span>Masia del 1682</span><div class="strip-dot"></div>
+      <span>Roda de Ter</span><div class="strip-dot"></div>
+      <span>WiFi gratuït</span><div class="strip-dot"></div>
+      <span>Aparcament gratuït</span><div class="strip-dot"></div>
+      <span>Rupit</span><div class="strip-dot"></div>
+      <span>Monestir de Casserres</span><div class="strip-dot"></div>
+    </div>
+  </div>
+
+  <!-- La Casa -->
+  <section class="section" id="la-casa">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-text gs-hidden">
+          <div class="section-label">
+            <span class="section-label-line"></span>
+            <span data-i18n="about.label">La nostra història</span>
+          </div>
+          <h2 class="section-title" data-i18n-html="about.title">Una masia amb<br>més de tres segles<br>d'història</h2>
+          <p data-i18n="about.p1">La Casa Vella del Cuní és molt més que una casa rural. És un refugi on el temps s'atura i la natura et respira a l'orella. Construïda l'any 1682, aquesta masia catalana ha estat restaurada amb tot el respecte per la seva essència original: parets de pedra, bigues de fusta, i aquella llum càlida que només les cases velles saben oferir.</p>
+          <p data-i18n="about.p2">Aquí trobaràs l'equilibri perfecte entre el confort modern i l'autenticitat d'una masia que ha vist passar generacions. El Jordi, l'amfitrió, s'assegura que cada detall estigui cuidat perquè la teva estada sigui impecable.</p>
+          <div class="about-highlight">
+            <div class="about-stat">
+              <div class="about-stat-num">1682</div>
+              <div class="about-stat-label" data-i18n="about.stat1">Any fundació</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">342</div>
+              <div class="about-stat-label" data-i18n="about.stat2">Anys d'història</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">15</div>
+              <div class="about-stat-label" data-i18n="about.stat3">Persones màxim</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-img-wrap gs-hidden">
+          <img src="Fotos Casa Vella/IMG_2609.jpg" alt="Façana de pedra de la Casa Vella del Cuní" loading="lazy">
+          <div class="about-img-accent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeria -->
+  <section class="section section-alt" id="habitacions">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 56px;" class="gs-hidden">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label-line"></span>
+          <span data-i18n="gallery.label">Espais</span>
+        </div>
+        <h2 class="section-title" data-i18n="gallery.title">La Casa en imatges</h2>
+        <p class="section-desc" style="margin: 12px auto 0;" data-i18n="gallery.desc">Pedra, fusta i llum natural. Cada racó de la masia respira autenticitat.</p>
+      </div>
+
+      <!-- EXTERIOR -->
+      <div class="gallery-group gs-hidden">
+        <div class="gallery-group-header">
+          <div class="gallery-group-label"><span data-i18n="gallery.ext">Exterior</span></div>
+        </div>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carousel-ext">
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="Fotos Casa Vella/IMG_2627.jpg" alt="Masia entre camps" loading="lazy">
+              <div class="gallery-item-overlay"><span>La masia i l'entorn</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7711.jpeg" alt="Façana de pedra de la Casa Vella del Cuní" loading="lazy">
+              <div class="gallery-item-overlay"><span>Façana de pedra</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7718.jpeg" alt="Arc de pedra centenari amb vistes a l'exterior" loading="lazy">
+              <div class="gallery-item-overlay"><span>Arc de pedra del 1682</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7753.jpeg" alt="Cartell d'entrada Casa Vella del Cuní" loading="lazy">
+              <div class="gallery-item-overlay"><span>Entrada a la finca</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERIOR -->
+      <div class="gallery-group gs-hidden">
+        <div class="gallery-group-header">
+          <div class="gallery-group-label"><span data-i18n="gallery.int">Interior</span></div>
+        </div>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carousel-int">
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7724.jpeg" alt="Sala principal amb bigues de fusta i llar de foc" loading="lazy">
+              <div class="gallery-item-overlay"><span>Sala principal</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7747.jpeg" alt="Sala d'estar amb llar de foc i televisió" loading="lazy">
+              <div class="gallery-item-overlay"><span>Sala d'estar amb llar de foc</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7746.jpeg" alt="Cuina gran equipada amb llum natural" loading="lazy">
+              <div class="gallery-item-overlay"><span>Cuina equipada</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7748.jpeg" alt="Cuina amb electrodomèstics i llum exterior" loading="lazy">
+              <div class="gallery-item-overlay"><span>Cuina — detall</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7730.jpeg" alt="Habitació doble amb finestra i detall de pedra" loading="lazy">
+              <div class="gallery-item-overlay"><span>Habitació doble</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7743.jpeg" alt="Habitació doble amb aire condicionat" loading="lazy">
+              <div class="gallery-item-overlay"><span>Habitació amb AC</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7744.jpeg" alt="Habitació amb dues llits individuals" loading="lazy">
+              <div class="gallery-item-overlay"><span>Habitació doble o twin</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7733.jpeg" alt="Habitació gran abuhardillada amb bigues" loading="lazy">
+              <div class="gallery-item-overlay"><span>Habitació gran amb bigues</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7722.jpeg" alt="Habitació doble amb mural de paisatge" loading="lazy">
+              <div class="gallery-item-overlay"><span>Habitació amb mural</span></div>
+            </div>
+            <div class="gallery-item" onclick="openLightbox(this)">
+              <img src="fotos-noves/IMG_7732.jpeg" alt="Bany complet amb finestra de sostre" loading="lazy">
+              <div class="gallery-item-overlay"><span>Bany</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Entorn -->
+  <section class="section" id="entorn">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 56px;" class="gs-hidden">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label-line"></span>
+          <span data-i18n="entorn.label">Descobreix</span>
+        </div>
+        <h2 class="section-title" data-i18n="entorn.title">Un entorn per explorar</h2>
+        <p class="section-desc" style="margin: 12px auto 0;" data-i18n="entorn.desc">La comarca d'Osona amaga tresors naturals i patrimonials a pocs minuts de la masia.</p>
+      </div>
+      <div class="entorn-grid">
+        <div class="entorn-card gs-hidden">
+          <div class="entorn-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg>
+          </div>
+          <h3>Rupit</h3>
+          <p data-i18n="entorn.rupit.desc">Poble medieval de carrerons empedrats, ponts penjants i salts d'aigua espectaculars.</p>
+        </div>
+        <div class="entorn-card gs-hidden">
+          <div class="entorn-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Monestir de Casserres</h3>
+          <p data-i18n="entorn.monestir.desc">Joia romànica del segle X amb unes vistes impressionants sobre el Ter.</p>
+        </div>
+        <div class="entorn-card gs-hidden">
+          <div class="entorn-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 12c2-4 6-8 10-8s8 4 10 8c-2 4-6 8-10 8s-8-4-10-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3>Riu Ter</h3>
+          <p data-i18n="entorn.ter.desc">Passejades vora el riu, pesca i racons tranquils on escoltar el murmuri de l'aigua.</p>
+        </div>
+        <div class="entorn-card gs-hidden">
+          <div class="entorn-icon">
+            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 data-i18n="entorn.senderisme.title">Senderisme</h3>
+          <p data-i18n="entorn.senderisme.desc">Rutes entre boscos de roures, camps de blat i vistes de Cabrera i el Montseny.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serveis -->
+  <section class="section section-alt" id="serveis">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 56px;" class="gs-hidden">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label-line"></span>
+          <span data-i18n="serveis.label">Serveis</span>
+        </div>
+        <h2 class="section-title" data-i18n="serveis.title">Tot el que necessites</h2>
+      </div>
+      <div class="serveis-grid">
+        <div class="servei-item gs-hidden">
+          <div class="servei-icon">
+            <svg viewBox="0 0 24 24"><path d="M2 12h20M2 12c1.5 2 3.5 3 5.5 3s4-1 5.5-3c1.5 2 3.5 3 5.5 3s4-1 5.5-3"/><path d="M2 18c1.5 2 3.5 3 5.5 3s4-1 5.5-3c1.5 2 3.5 3 5.5 3s4-1 5.5-3"/><rect x="6" y="4" width="4" height="8" rx="2"/><rect x="14" y="4" width="4" height="8" rx="2"/></svg>
+          </div>
+          <h4 data-i18n="serveis.piscina.title">Piscina privada</h4>
+          <p data-i18n="serveis.piscina.desc">Exterior, temporada estiu</p>
+        </div>
+        <div class="servei-item gs-hidden">
+          <div class="servei-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22V8M7 12c-3 0-5-2-5-5s5-5 5-5c0 3 2 5 5 5M17 12c3 0 5-2 5-5s-5-5-5-5c0 3-2 5-5 5"/></svg>
+          </div>
+          <h4 data-i18n="serveis.jardi.title">Jardí</h4>
+          <p data-i18n="serveis.jardi.desc">Ampli i tranquil</p>
+        </div>
+        <div class="servei-item gs-hidden">
+          <div class="servei-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0114 0M8.53 16.11a6 6 0 016.95 0M12 20h.01"/></svg>
+          </div>
+          <h4 data-i18n="serveis.wifi.title">WiFi gratuït</h4>
+          <p data-i18n="serveis.wifi.desc">Connexió a tota la casa</p>
+        </div>
+        <div class="servei-item gs-hidden">
+          <div class="servei-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg>
+          </div>
+          <h4 data-i18n="serveis.parking.title">Aparcament</h4>
+          <p data-i18n="serveis.parking.desc">Privat i gratuït</p>
+        </div>
+        <div class="servei-item gs-hidden">
+          <div class="servei-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 18a5 5 0 00-10 0"/><path d="M12 9V2M4.22 10.22l1.42 1.42M19.78 10.22l-1.42 1.42M1 18h22"/></svg>
+          </div>
+          <h4 data-i18n="serveis.natura.title">Entorn natural</h4>
+          <p data-i18n="serveis.natura.desc">Silenci i natura pura</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Com arribar -->
+  <section class="section section-alt" id="arribar">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 48px;" class="gs-hidden">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label-line"></span>
+          <span data-i18n="arribar.label">Com arribar</span>
+        </div>
+        <h2 class="section-title" data-i18n="arribar.title">Des de Barcelona en 1 hora</h2>
+        <p class="section-desc" style="margin: 12px auto 0;" data-i18n="arribar.desc">Roda de Ter, Osona — a 65 km del centre de Barcelona</p>
+      </div>
+      <!-- Transfer banner -->
+      <div class="gs-hidden" style="max-width:760px; margin: 0 auto 40px; background: linear-gradient(135deg, var(--accent-lt), #fff); border: 1.5px solid var(--accent); border-radius: 12px; padding: 24px 32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <div style="flex-shrink:0; width:48px; height:48px; background:var(--accent); border-radius:50%; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <div style="flex:1; min-width:200px;">
+          <div style="font-family:'Playfair Display',serif; font-size:1.05rem; font-weight:600; color:var(--ink); margin-bottom:4px;" data-i18n="transfer.title">Servei de recollida a l'aeroport</div>
+          <div style="font-size:.85rem; color:var(--ink-2); line-height:1.6;" data-i18n="transfer.desc">Per a hostes internacionals: us recollim a l'Aeroport de Barcelona (El Prat) i us portem directament a la masia. Consulteu el preu per WhatsApp.</div>
+        </div>
+        <a href="https://wa.me/34630936545?text=Hola%20Jordi!%20Voldria%20consultar%20el%20preu%20del%20servei%20de%20recollida%20a%20l'aeroport." target="_blank" rel="noopener" style="flex-shrink:0; background:var(--accent); color:#fff; border-radius:6px; padding:12px 20px; font-size:.82rem; font-weight:600; text-decoration:none; white-space:nowrap; transition:background .2s;" onmouseover="this.style.background='var(--accent-2)'" onmouseout="this.style.background='var(--accent)'" data-i18n="transfer.btn">Consultar preu →</a>
+      </div>
+
+      <div class="arribar-grid">
+        <div class="arribar-card gs-hidden">
+          <div class="arribar-icon">
+            <svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h11a2 2 0 012 2v3m-4 12H9m3-3v3m8-6v-3a3 3 0 00-3-3h-1V5"/><rect x="9" y="11" width="14" height="10" rx="2"/></svg>
+          </div>
+          <h4 data-i18n="arribar.cotxe.title">En cotxe (recomanat)</h4>
+          <p data-i18n-html="arribar.cotxe.desc"><strong>~65 km · 1h</strong> des del centre de Barcelona via autopista C-17 direcció Vic. GPS: Roda de Ter, Osona. Hi ha lloguer de cotxes a l'aeroport El Prat.</p>
+        </div>
+        <div class="arribar-card gs-hidden">
+          <div class="arribar-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+          </div>
+          <h4 data-i18n="arribar.tren.title">En tren + taxi</h4>
+          <p data-i18n-html="arribar.tren.desc">RENFE des de <strong>Barcelona-Passeig de Gràcia → Vic</strong> (~1h). Des de Vic, taxi fins a Roda de Ter (~15 min). Consulteu horaris a renfe.com.</p>
+        </div>
+        <div class="arribar-card gs-hidden">
+          <div class="arribar-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4 data-i18n="arribar.aeroport.title">Des de l'aeroport</h4>
+          <p data-i18n-html="arribar.aeroport.desc">Aeroport <strong>Barcelona El Prat (BCN)</strong> → A2/C-17 → Roda de Ter. Aproximadament <strong>1h 15min</strong> en cotxe de lloguer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-inner">
+      <div style="text-align:center; margin-bottom: 56px;" class="gs-hidden">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label-line"></span>
+          <span data-i18n="faq.label">Preguntes freqüents</span>
+        </div>
+        <h2 class="section-title" data-i18n="faq.title">Tot el que necessites saber</h2>
+        <p class="section-desc" style="margin: 12px auto 0;" data-i18n="faq.desc">Respostes clares per preparar la teva estada sense sorpreses.</p>
+      </div>
+      <div class="faq-list gs-hidden">
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q1">Quins són els horaris d'entrada i sortida?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a1">L'entrada (check-in) és a partir de les 11h del matí. La sortida (check-out) és fins a les 17h de la tarda.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q2">S'accepten mascotes?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a2">No, lamentem que no s'accepten mascotes a la Casa Vella del Cuní.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q3">Hi ha aparcament disponible?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a3">Sí, disposem d'un aparcament privat ampli i completament gratuït dins de la finca.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q4">Quan és oberta la piscina?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a4">La piscina privada exterior obre a partir d'abril-maig i tanca quan arriben les temperatures fredes de tardor. Consulta'ns les dates exactes en funció de l'any.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q5">Hi ha cuina disponible?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a5">Sí, la cuina equipada és disponible per als hostes. Però tingues en compte que no hi ha aliments inclosos: hauràs de portar els teus propis queviures.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q6">Hi ha bugaderia?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a6">Sí, disposem d'una sala de bugaderia per rentar roba i altres necessitats de les estades llargues.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q8">Oferiu recollida a l'aeroport?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a8">Sí! Per a hostes que viatgen des de fora d'Espanya, oferim un servei de recollida privada a l'Aeroport de Barcelona (El Prat) i us portem directament fins a la masia. Consulteu el preu contactant directament amb el Jordi per WhatsApp.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" onclick="toggleFaq(this)">
+            <span data-i18n="faq.q7">Quina és la mínima estada?</span>
+            <span class="faq-icon"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner" data-i18n="faq.a7">La mínima estada és de 3 nits. Per a estades més curtes, contacta directament amb el Jordi per consultar disponibilitat.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacte -->
+  <section class="section" id="contacte">
+    <div class="section-inner">
+      <div class="contacte-wrap gs-hidden">
+        <div class="section-label" style="justify-content:center;">
+          <span class="section-label-line"></span>
+          <span data-i18n="contacte.label">Reserva</span>
+        </div>
+        <h2 class="section-title" data-i18n="contacte.title">Vine a desconnectar</h2>
+        <p class="contacte-subtitle" data-i18n-html="contacte.subtitle">El <strong>Jordi</strong> estarà encantat d'atendre't i ajudar-te a planificar la teva escapada a la comarca d'Osona.</p>
+        <div class="contacte-buttons">
+          <a href="https://wa.me/34630936545" class="btn-whatsapp" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href="tel:630936545" class="btn-phone">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            630 936 545
+          </a>
+          <a href="https://line.me/ti/p/~AFEGIR_ID_LINE" class="btn-line" target="_blank" rel="noopener" id="lineBtn" style="display:none">
+            <svg viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            LINE
+          </a>
+        </div>
+        <p class="contacte-note" data-i18n="contacte.note">Respon habitualment en menys d'una hora</p>
+        <div class="contacte-info">
+          <div class="contacte-info-item">
+            <h4 data-i18n="contacte.ubicacio">Ubicació</h4>
+            <a href="https://maps.google.com/?q=Casa+Vella+del+Cun%C3%AD,+Roda+de+Ter" target="_blank" rel="noopener" style="font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--ink); text-decoration:none; border-bottom:1px solid var(--accent); padding-bottom:1px; transition:color .2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink)'">Roda de Ter, Osona ↗</a>
+          </div>
+          <div class="contacte-info-item">
+            <h4 data-i18n="contacte.amfitrio">Amfitrió</h4>
+            <p>Jordi</p>
+          </div>
+          <div class="contacte-info-item">
+            <h4 data-i18n="contacte.tipus">Tipus</h4>
+            <p data-i18n="contacte.tipus-val">Casa rural de turisme</p>
+          </div>
+        </div>
+
+        <!-- Formulari de reserva WhatsApp -->
+        <div class="booking-form gs-hidden">
+          <div class="booking-form-title" data-i18n="form.title">Envia la teva petició de reserva</div>
+          <p class="booking-form-sub" data-i18n="form.sub">Omple el formulari i t'enviarem la confirmació per WhatsApp</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="form.nom">Nom i cognoms</label>
+              <input type="text" id="fNom" placeholder="Jordi Garcia" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form.persones">Nombre de persones</label>
+              <select id="fPersones">
+                <option value="1">1</option>
+                <option value="2" selected>2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8+</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="form.arribada">Data d'arribada</label>
+              <input type="date" id="fArribada">
+            </div>
+            <div class="form-group">
+              <label data-i18n="form.sortida">Data de sortida</label>
+              <input type="date" id="fSortida">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label data-i18n="form.missatge">Missatge (opcional)</label>
+              <textarea id="fMissatge" placeholder="Qualsevol pregunta o comentari..."></textarea>
+            </div>
+          </div>
+          <button class="btn-form-wa" onclick="enviarWA()">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span data-i18n="form.btn">Enviar per WhatsApp</span>
+          </button>
+          <p class="form-note" data-i18n="form.note">S'obrirà WhatsApp amb totes les dades emplenades automàticament</p>
+        </div>
+
+        <!-- Booking Platforms -->
+        <div class="booking-section gs-hidden">
+          <div class="booking-asia-badge">
+            🌏 <span data-i18n="booking.asia-badge">Disponible per a reserves internacionals</span>
+          </div>
+          <h3 class="booking-section-title" data-i18n="booking.title">Reserva en línia</h3>
+          <p class="booking-section-sub" data-i18n="booking.subtitle">Troba'ns a les principals plataformes internacionals de reserva</p>
+          <div class="booking-grid">
+            <a href="https://www.booking.com/hotel/es/la-casa-vella-del-cuni.html" target="_blank" rel="noopener" class="booking-card">
+              <div class="booking-card-name bc-blue">Booking.com</div>
+              <div class="booking-card-desc">Global · 中文 · 日本語 · 한국어</div>
+              <div class="booking-card-action" data-i18n="booking.btn">Cerca disponibilitat →</div>
+            </a>
+            <a href="https://www.trip.com/hotels/list/?keyword=Casa+Vella+del+Cuni+Roda+de+Ter" target="_blank" rel="noopener" class="booking-card">
+              <div class="booking-card-name bc-trip">Trip.com</div>
+              <div class="booking-card-desc">携程 · 中国大陆首选</div>
+              <div class="booking-card-action" data-i18n="booking.btn">Cerca disponibilitat →</div>
+            </a>
+            <a href="https://www.airbnb.cat/rooms/925464508844393976" target="_blank" rel="noopener" class="booking-card">
+              <div class="booking-card-name bc-ab">Airbnb</div>
+              <div class="booking-card-desc">Global · Asia · Europe</div>
+              <div class="booking-card-action" data-i18n="booking.btn">Cerca disponibilitat →</div>
+            </a>
+            <a href="https://www.fliggy.com/search/hotel/search.htm?keyword=Casa+Vella+del+Cuni+Roda+de+Ter" target="_blank" rel="noopener" class="booking-card">
+              <div class="booking-card-name bc-fliggy">飞猪 Fliggy</div>
+              <div class="booking-card-desc">阿里巴巴旅行 · 中国市场首选</div>
+              <div class="booking-card-action" data-i18n="booking.btn">Cerca disponibilitat →</div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Casa Vella del Cuní</div>
+      <div class="footer-loc">Roda de Ter, Osona — Catalunya</div>
+      <div class="footer-links">
+        <a href="#inici" data-i18n="nav.inici">Inici</a>
+        <a href="#la-casa" data-i18n="nav.la-casa">La Casa</a>
+        <a href="#habitacions" data-i18n="nav.galeria">Galeria</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contacte" data-i18n="nav.contacte">Contacte</a>
+        <a href="avis-legal.html">Avís legal</a>
+        <a href="privacitat.html">Privacitat</a>
+      </div>
+      <div class="footer-copy" data-i18n="footer.copy">&copy; 2024 Casa Vella del Cuní. Tots els drets reservats.</div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Tancar">&times;</button>
+    <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    /* ── TRANSLATIONS ── */
+    var T = {
+      ca: {
+        'nav.inici': 'Inici', 'nav.la-casa': 'La Casa', 'nav.galeria': 'Galeria',
+        'nav.entorn': 'Entorn', 'nav.contacte': 'Contacte', 'nav.reserva': 'Reserva ara',
+        'hero.sub': "Una masia del 1682 restaurada amb cura, envoltada de natura i silenci. L'escapada rural que necessites, a la comarca d'Osona.",
+        'hero.btn-cta': 'Reserva ara', 'hero.btn-ghost': 'Descobreix la casa ↓',
+        'about.label': "La nostra història",
+        'about.title': "Una masia amb<br>més de tres segles<br>d'història",
+        'about.p1': "La Casa Vella del Cuní és molt més que una casa rural. És un refugi on el temps s'atura i la natura et respira a l'orella. Construïda l'any 1682, aquesta masia catalana ha estat restaurada amb tot el respecte per la seva essència original: parets de pedra, bigues de fusta, i aquella llum càlida que només les cases velles saben oferir.",
+        'about.p2': "Aquí trobaràs l'equilibri perfecte entre el confort modern i l'autenticitat d'una masia que ha vist passar generacions. El Jordi, l'amfitrió, s'assegura que cada detall estigui cuidat perquè la teva estada sigui impecable.",
+        'about.stat1': "Any fundació", 'about.stat2': "Anys d'història", 'about.stat3': 'Persones màxim',
+        'gallery.label': 'Espais', 'gallery.title': 'La Casa en imatges',
+        'gallery.desc': 'Pedra, fusta i llum natural. Cada racó de la masia respira autenticitat.',
+        'gallery.ext': 'Exterior', 'gallery.int': 'Interior',
+        'entorn.label': 'Descobreix', 'entorn.title': 'Un entorn per explorar',
+        'entorn.desc': "La comarca d'Osona amaga tresors naturals i patrimonials a pocs minuts de la masia.",
+        'entorn.rupit.desc': "Poble medieval de carrerons empedrats, ponts penjants i salts d'aigua espectaculars.",
+        'entorn.monestir.desc': 'Joia romànica del segle X amb unes vistes impressionants sobre el Ter.',
+        'entorn.ter.desc': "Passejades vora el riu, pesca i racons tranquils on escoltar el murmuri de l'aigua.",
+        'entorn.senderisme.title': 'Senderisme',
+        'entorn.senderisme.desc': 'Rutes entre boscos de roures, camps de blat i vistes de Cabrera i el Montseny.',
+        'serveis.label': 'Serveis', 'serveis.title': 'Tot el que necessites',
+        'serveis.piscina.title': 'Piscina privada', 'serveis.piscina.desc': 'Exterior, temporada estiu',
+        'serveis.jardi.title': 'Jardí', 'serveis.jardi.desc': 'Ampli i tranquil',
+        'serveis.wifi.title': 'WiFi gratuït', 'serveis.wifi.desc': 'Connexió a tota la casa',
+        'serveis.parking.title': 'Aparcament', 'serveis.parking.desc': 'Privat i gratuït',
+        'serveis.natura.title': 'Entorn natural', 'serveis.natura.desc': 'Silenci i natura pura',
+        'contacte.label': 'Reserva', 'contacte.title': 'Vine a desconnectar',
+        'contacte.subtitle': "El <strong>Jordi</strong> estarà encantat d'atendre't i ajudar-te a planificar la teva escapada a la comarca d'Osona.",
+        'contacte.note': "Respon habitualment en menys d'una hora",
+        'contacte.ubicacio': 'Ubicació', 'contacte.amfitrio': 'Amfitrió',
+        'contacte.tipus': 'Tipus', 'contacte.tipus-val': 'Casa rural de turisme',
+        'booking.asia-badge': 'Disponible per a reserves internacionals',
+        'booking.title': 'Reserva en línia',
+        'booking.subtitle': "Troba'ns a les principals plataformes internacionals de reserva",
+        'booking.btn': 'Cerca disponibilitat →',
+        'footer.copy': '© 2024 Casa Vella del Cuní. Tots els drets reservats.',
+        'nav.faq': 'FAQ',
+        'faq.label': 'Preguntes freqüents', 'faq.title': 'Tot el que necessites saber',
+        'faq.desc': "Respostes clares per preparar la teva estada sense sorpreses.",
+        'faq.q1': "Quins són els horaris d'entrada i sortida?",
+        'faq.a1': "L'entrada (check-in) és a partir de les 11h del matí. La sortida (check-out) és fins a les 17h de la tarda.",
+        'faq.q2': "S'accepten mascotes?",
+        'faq.a2': "No, lamentem que no s'accepten mascotes a la Casa Vella del Cuní.",
+        'faq.q3': "Hi ha aparcament disponible?",
+        'faq.a3': "Sí, disposem d'un aparcament privat ampli i completament gratuït dins de la finca.",
+        'faq.q4': "Quan és oberta la piscina?",
+        'faq.a4': "La piscina privada exterior obre a partir d'abril-maig i tanca quan arriben les temperatures fredes de tardor. Consulta'ns les dates exactes en funció de l'any.",
+        'faq.q5': "Hi ha cuina disponible?",
+        'faq.a5': "Sí, la cuina equipada és disponible per als hostes. Però tingues en compte que no hi ha aliments inclosos: hauràs de portar els teus propis queviures.",
+        'faq.q6': "Hi ha bugaderia?",
+        'faq.a6': "Sí, disposem d'una sala de bugaderia per rentar roba i altres necessitats de les estades llargues.",
+        'faq.q7': "Quina és la mínima estada?",
+        'faq.a7': "La mínima estada és de 3 nits. Per a estades més curtes, contacta directament amb el Jordi per consultar disponibilitat.",
+        'form.title': 'Envia la teva petició de reserva',
+        'form.sub': "Omple el formulari i t'enviarem la confirmació per WhatsApp",
+        'form.nom': 'Nom i cognoms', 'form.persones': 'Nombre de persones',
+        'form.arribada': "Data d'arribada", 'form.sortida': 'Data de sortida',
+        'form.missatge': 'Missatge (opcional)',
+        'form.btn': 'Enviar per WhatsApp',
+        'form.note': "S'obrirà WhatsApp amb totes les dades emplenades automàticament",
+        'faq.q8': "Oferiu recollida a l'aeroport?",
+        'faq.a8': "Sí! Per a hostes que viatgen des de fora d'Espanya, oferim un servei de recollida privada a l'Aeroport de Barcelona (El Prat) i us portem directament fins a la masia. Consulteu el preu contactant directament amb el Jordi per WhatsApp.",
+        'transfer.title': "Servei de recollida a l'aeroport",
+        'transfer.desc': "Per a hostes internacionals: us recollim a l'Aeroport de Barcelona (El Prat) i us portem directament a la masia. Consulteu el preu per WhatsApp.",
+        'transfer.btn': 'Consultar preu →',
+        'arribar.label': 'Com arribar', 'arribar.title': 'Des de Barcelona en 1 hora',
+        'arribar.desc': 'Roda de Ter, Osona — a 65 km del centre de Barcelona',
+        'arribar.cotxe.title': 'En cotxe (recomanat)',
+        'arribar.cotxe.desc': '<strong>~65 km · 1h</strong> des del centre de Barcelona via autopista C-17 direcció Vic. GPS: Roda de Ter, Osona. Hi ha lloguer de cotxes a l\'aeroport El Prat.',
+        'arribar.tren.title': 'En tren + taxi',
+        'arribar.tren.desc': 'RENFE des de <strong>Barcelona-Passeig de Gràcia → Vic</strong> (~1h). Des de Vic, taxi fins a Roda de Ter (~15 min). Consulteu horaris a renfe.com.',
+        'arribar.aeroport.title': 'Des de l\'aeroport',
+        'arribar.aeroport.desc': 'Aeroport <strong>Barcelona El Prat (BCN)</strong> → A2/C-17 → Roda de Ter. Aproximadament <strong>1h 15min</strong> en cotxe de lloguer.'
+      },
+      es: {
+        'nav.inici': 'Inicio', 'nav.la-casa': 'La Casa', 'nav.galeria': 'Galería',
+        'nav.entorn': 'Entorno', 'nav.contacte': 'Contacto', 'nav.reserva': 'Reservar ahora',
+        'hero.sub': 'Una masía de 1682 restaurada con esmero, rodeada de naturaleza y silencio. La escapada rural que necesitas, en la comarca de Osona.',
+        'hero.btn-cta': 'Reservar ahora', 'hero.btn-ghost': 'Descubre la casa ↓',
+        'about.label': 'Nuestra historia',
+        'about.title': 'Una masía con<br>más de tres siglos<br>de historia',
+        'about.p1': 'La Casa Vella del Cuní es mucho más que una casa rural. Es un refugio donde el tiempo se detiene y la naturaleza te respira al oído. Construida en el año 1682, esta masía catalana ha sido restaurada con todo el respeto por su esencia original: paredes de piedra, vigas de madera, y esa luz cálida que solo las casas viejas saben ofrecer.',
+        'about.p2': 'Aquí encontrarás el equilibrio perfecto entre el confort moderno y la autenticidad de una masía que ha visto pasar generaciones. Jordi, el anfitrión, se asegura de que cada detalle esté cuidado para que tu estancia sea impecable.',
+        'about.stat1': 'Año fundación', 'about.stat2': 'Años de historia', 'about.stat3': 'Personas máx.',
+        'gallery.label': 'Espacios', 'gallery.title': 'La Casa en imágenes',
+        'gallery.desc': 'Piedra, madera y luz natural. Cada rincón de la masía respira autenticidad.',
+        'gallery.ext': 'Exterior', 'gallery.int': 'Interior',
+        'entorn.label': 'Descubre', 'entorn.title': 'Un entorno para explorar',
+        'entorn.desc': 'La comarca de Osona esconde tesoros naturales y patrimoniales a pocos minutos de la masía.',
+        'entorn.rupit.desc': 'Pueblo medieval de callejones empedrados, puentes colgantes y espectaculares saltos de agua.',
+        'entorn.monestir.desc': 'Joya románica del siglo X con unas vistas impresionantes sobre el Ter.',
+        'entorn.ter.desc': 'Paseos junto al río, pesca y rincones tranquilos donde escuchar el murmullo del agua.',
+        'entorn.senderisme.title': 'Senderismo',
+        'entorn.senderisme.desc': 'Rutas entre bosques de robles, campos de trigo y vistas de Cabrera y el Montseny.',
+        'serveis.label': 'Servicios', 'serveis.title': 'Todo lo que necesitas',
+        'serveis.piscina.title': 'Piscina privada', 'serveis.piscina.desc': 'Exterior, temporada verano',
+        'serveis.jardi.title': 'Jardín', 'serveis.jardi.desc': 'Amplio y tranquilo',
+        'serveis.wifi.title': 'WiFi gratuito', 'serveis.wifi.desc': 'Conexión en toda la casa',
+        'serveis.parking.title': 'Aparcamiento', 'serveis.parking.desc': 'Privado y gratuito',
+        'serveis.natura.title': 'Entorno natural', 'serveis.natura.desc': 'Silencio y naturaleza pura',
+        'contacte.label': 'Reserva', 'contacte.title': 'Ven a desconectar',
+        'contacte.subtitle': 'El <strong>Jordi</strong> estará encantado de atenderte y ayudarte a planificar tu escapada a la comarca de Osona.',
+        'contacte.note': 'Responde habitualmente en menos de una hora',
+        'contacte.ubicacio': 'Ubicación', 'contacte.amfitrio': 'Anfitrión',
+        'contacte.tipus': 'Tipo', 'contacte.tipus-val': 'Casa rural de turismo',
+        'booking.asia-badge': 'Disponible para reservas internacionales',
+        'booking.title': 'Reserva en línea',
+        'booking.subtitle': 'Encuéntranos en las principales plataformas internacionales de reserva',
+        'booking.btn': 'Buscar disponibilidad →',
+        'footer.copy': '© 2024 Casa Vella del Cuní. Todos los derechos reservados.',
+        'nav.faq': 'FAQ',
+        'faq.label': 'Preguntas frecuentes', 'faq.title': 'Todo lo que necesitas saber',
+        'faq.desc': 'Respuestas claras para preparar tu estancia sin sorpresas.',
+        'faq.q1': '¿Cuáles son los horarios de entrada y salida?',
+        'faq.a1': 'La entrada (check-in) es a partir de las 11h de la mañana. La salida (check-out) es hasta las 17h de la tarde.',
+        'faq.q2': '¿Se aceptan mascotas?',
+        'faq.a2': 'No, lamentamos que no se acepten mascotas en la Casa Vella del Cuní.',
+        'faq.q3': '¿Hay aparcamiento disponible?',
+        'faq.a3': 'Sí, disponemos de un aparcamiento privado amplio y completamente gratuito dentro de la finca.',
+        'faq.q4': '¿Cuándo está abierta la piscina?',
+        'faq.a4': 'La piscina privada exterior abre a partir de abril-mayo y cierra cuando llegan las temperaturas frías de otoño. Consúltanos las fechas exactas según el año.',
+        'faq.q5': '¿Hay cocina disponible?',
+        'faq.a5': 'Sí, la cocina equipada está disponible para los huéspedes. Ten en cuenta que no hay alimentos incluidos: deberás traer tus propias provisiones.',
+        'faq.q6': '¿Hay lavandería?',
+        'faq.a6': 'Sí, disponemos de una sala de lavandería para lavar ropa y otras necesidades de estancias largas.',
+        'faq.q7': '¿Cuál es la estancia mínima?',
+        'faq.a7': 'La estancia mínima es de 3 noches. Para estancias más cortas, contacta directamente con Jordi para consultar disponibilidad.',
+        'form.title': 'Envía tu petición de reserva',
+        'form.sub': 'Rellena el formulario y te confirmaremos por WhatsApp',
+        'form.nom': 'Nombre y apellidos', 'form.persones': 'Número de personas',
+        'form.arribada': 'Fecha de llegada', 'form.sortida': 'Fecha de salida',
+        'form.missatge': 'Mensaje (opcional)',
+        'form.btn': 'Enviar por WhatsApp',
+        'form.note': 'Se abrirá WhatsApp con todos los datos rellenados automáticamente',
+        'faq.q8': '¿Ofrecéis recogida en el aeropuerto?',
+        'faq.a8': '¡Sí! Para huéspedes que viajan desde fuera de España, ofrecemos un servicio de recogida privada en el Aeropuerto de Barcelona (El Prat) y os llevamos directamente hasta la masía. Consultad el precio contactando directamente con Jordi por WhatsApp.',
+        'transfer.title': 'Servicio de recogida en el aeropuerto',
+        'transfer.desc': 'Para huéspedes internacionales: os recogemos en el Aeropuerto de Barcelona (El Prat) y os llevamos directamente a la masía. Consultad el precio por WhatsApp.',
+        'transfer.btn': 'Consultar precio →',
+        'arribar.label': 'Cómo llegar', 'arribar.title': 'Desde Barcelona en 1 hora',
+        'arribar.desc': 'Roda de Ter, Osona — a 65 km del centro de Barcelona',
+        'arribar.cotxe.title': 'En coche (recomendado)',
+        'arribar.cotxe.desc': '<strong>~65 km · 1h</strong> desde el centro de Barcelona por la autopista C-17 dirección Vic. GPS: Roda de Ter, Osona. Alquiler de coches disponible en el aeropuerto El Prat.',
+        'arribar.tren.title': 'En tren + taxi',
+        'arribar.tren.desc': 'RENFE desde <strong>Barcelona-Passeig de Gràcia → Vic</strong> (~1h). Desde Vic, taxi hasta Roda de Ter (~15 min). Consulta horarios en renfe.com.',
+        'arribar.aeroport.title': 'Desde el aeropuerto',
+        'arribar.aeroport.desc': 'Aeropuerto <strong>Barcelona El Prat (BCN)</strong> → A2/C-17 → Roda de Ter. Aproximadamente <strong>1h 15min</strong> en coche de alquiler.'
+      },
+      en: {
+        'nav.inici': 'Home', 'nav.la-casa': 'The House', 'nav.galeria': 'Gallery',
+        'nav.entorn': 'Surroundings', 'nav.contacte': 'Contact', 'nav.reserva': 'Book now',
+        'hero.sub': 'A 1682 farmhouse carefully restored, surrounded by nature and silence. The rural escape you need, in the Osona region of Catalonia.',
+        'hero.btn-cta': 'Book now', 'hero.btn-ghost': 'Discover the house ↓',
+        'about.label': 'Our story',
+        'about.title': 'A farmhouse with<br>over three centuries<br>of history',
+        'about.p1': 'Casa Vella del Cuní is much more than a rural house. It is a refuge where time stands still and nature breathes in your ear. Built in 1682, this Catalan farmhouse has been restored with full respect for its original essence: stone walls, wooden beams, and that warm light that only old houses know how to offer.',
+        'about.p2': 'Here you will find the perfect balance between modern comfort and the authenticity of a farmhouse that has seen generations pass. Jordi, the host, ensures that every detail is taken care of so that your stay is impeccable.',
+        'about.stat1': 'Founded', 'about.stat2': 'Years of history', 'about.stat3': 'Max. guests',
+        'gallery.label': 'Spaces', 'gallery.title': 'The House in Images',
+        'gallery.desc': 'Stone, wood and natural light. Every corner of the farmhouse breathes authenticity.',
+        'gallery.ext': 'Exterior', 'gallery.int': 'Interior',
+        'entorn.label': 'Discover', 'entorn.title': 'Surroundings to explore',
+        'entorn.desc': 'The Osona region hides natural and heritage treasures just minutes from the farmhouse.',
+        'entorn.rupit.desc': 'Medieval village with cobblestone alleys, hanging bridges and spectacular waterfalls.',
+        'entorn.monestir.desc': '10th-century Romanesque gem with impressive views over the river Ter.',
+        'entorn.ter.desc': 'Riverside walks, fishing and peaceful spots to listen to the murmur of the water.',
+        'entorn.senderisme.title': 'Hiking',
+        'entorn.senderisme.desc': 'Routes through oak forests, wheat fields and views of Cabrera and Montseny.',
+        'serveis.label': 'Amenities', 'serveis.title': 'Everything you need',
+        'serveis.piscina.title': 'Private pool', 'serveis.piscina.desc': 'Outdoor, summer season',
+        'serveis.jardi.title': 'Garden', 'serveis.jardi.desc': 'Spacious and peaceful',
+        'serveis.wifi.title': 'Free WiFi', 'serveis.wifi.desc': 'Throughout the house',
+        'serveis.parking.title': 'Parking', 'serveis.parking.desc': 'Private and free',
+        'serveis.natura.title': 'Nature', 'serveis.natura.desc': 'Silence and pure nature',
+        'contacte.label': 'Book', 'contacte.title': 'Come and disconnect',
+        'contacte.subtitle': '<strong>Jordi</strong> will be delighted to assist you and help you plan your getaway to the Osona region.',
+        'contacte.note': 'Usually responds within an hour',
+        'contacte.ubicacio': 'Location', 'contacte.amfitrio': 'Host',
+        'contacte.tipus': 'Type', 'contacte.tipus-val': 'Rural guesthouse',
+        'booking.asia-badge': 'Available on international booking platforms',
+        'booking.title': 'Book online',
+        'booking.subtitle': 'Find us on the major international booking platforms',
+        'booking.btn': 'Check availability →',
+        'footer.copy': '© 2024 Casa Vella del Cuní. All rights reserved.',
+        'nav.faq': 'FAQ',
+        'faq.label': 'Frequently asked questions', 'faq.title': 'Everything you need to know',
+        'faq.desc': 'Clear answers to help you plan your stay without surprises.',
+        'faq.q1': 'What are the check-in and check-out times?',
+        'faq.a1': 'Check-in is from 11:00 AM. Check-out is by 5:00 PM.',
+        'faq.q2': 'Are pets allowed?',
+        'faq.a2': 'No, unfortunately pets are not allowed at Casa Vella del Cuní.',
+        'faq.q3': 'Is parking available?',
+        'faq.a3': 'Yes, we have a spacious private parking area on the property, free of charge.',
+        'faq.q4': 'When is the pool open?',
+        'faq.a4': 'The outdoor private pool is open from April–May and closes when cold weather arrives in autumn. Contact us for exact dates each year.',
+        'faq.q5': 'Is there a kitchen available?',
+        'faq.a5': 'Yes, a fully equipped kitchen is available for guests. Please note that no food is included — you will need to bring your own groceries.',
+        'faq.q6': 'Is there a laundry room?',
+        'faq.a6': 'Yes, we have a laundry room available for washing clothes and other needs during longer stays.',
+        'faq.q7': 'What is the minimum stay?',
+        'faq.a7': 'The minimum stay is 3 nights. For shorter stays, contact Jordi directly to check availability.',
+        'form.title': 'Send your booking request',
+        'form.sub': 'Fill in the form and we will confirm via WhatsApp',
+        'form.nom': 'Full name', 'form.persones': 'Number of guests',
+        'form.arribada': 'Arrival date', 'form.sortida': 'Departure date',
+        'form.missatge': 'Message (optional)',
+        'form.btn': 'Send via WhatsApp',
+        'form.note': 'WhatsApp will open with all details pre-filled automatically',
+        'faq.q8': 'Do you offer airport pickup?',
+        'faq.a8': 'Yes! For guests travelling from outside Spain, we offer a private pickup service from Barcelona Airport (El Prat) and drive you directly to the farmhouse. Ask Jordi for the price via WhatsApp.',
+        'transfer.title': 'Airport pickup service',
+        'transfer.desc': 'For international guests: we pick you up at Barcelona Airport (El Prat) and drive you directly to the farmhouse. Ask for the price via WhatsApp.',
+        'transfer.btn': 'Ask for price →',
+        'arribar.label': 'How to get here', 'arribar.title': '1 hour from Barcelona',
+        'arribar.desc': 'Roda de Ter, Osona — 65 km from Barcelona city centre',
+        'arribar.cotxe.title': 'By car (recommended)',
+        'arribar.cotxe.desc': '<strong>~65 km · 1h</strong> from Barcelona city centre via motorway C-17 towards Vic. GPS: Roda de Ter, Osona. Car rental available at El Prat Airport.',
+        'arribar.tren.title': 'By train + taxi',
+        'arribar.tren.desc': 'RENFE train from <strong>Barcelona-Passeig de Gràcia → Vic</strong> (~1h). From Vic, taxi to Roda de Ter (~15 min). Check timetables at renfe.com.',
+        'arribar.aeroport.title': 'From the airport',
+        'arribar.aeroport.desc': '<strong>Barcelona El Prat Airport (BCN)</strong> → A2/C-17 → Roda de Ter. Approximately <strong>1h 15min</strong> by rental car.'
+      },
+      zh: {
+        'nav.inici': '首页', 'nav.la-casa': '关于民宿', 'nav.galeria': '图集',
+        'nav.entorn': '周边环境', 'nav.contacte': '联系我们', 'nav.reserva': '立即预订',
+        'hero.sub': '这座建于1682年的农庄经过精心修缮，被大自然和宁静所环绕。位于加泰罗尼亚奥索纳地区，这就是您理想的乡村度假胜地。',
+        'hero.btn-cta': '立即预订', 'hero.btn-ghost': '了解民宿 ↓',
+        'about.label': '我们的故事',
+        'about.title': '拥有三百年历史<br>的乡村农庄',
+        'about.p1': '卡萨·维利亚·德尔·库尼不仅仅是一座乡村民宿。这里是一个时间静止、大自然轻语的避风港。这座加泰罗尼亚农庄建于1682年，以充分尊重其原始本质的方式修缮：石墙、木梁，以及只有老房子才能给予的那份温暖光线。',
+        'about.p2': '在这里，您将找到现代舒适与见证数代人岁月流逝的农庄真实性之间的完美平衡。房东Jordi确保每一个细节都经过精心照料，让您的住宿无可挑剔。',
+        'about.stat1': '建造年份', 'about.stat2': '历史年份', 'about.stat3': '最多住客',
+        'gallery.label': '空间', 'gallery.title': '民宿图集',
+        'gallery.desc': '石头、木材和自然光。农庄的每个角落都充满真实气息。',
+        'gallery.ext': '外观', 'gallery.int': '内部',
+        'entorn.label': '探索', 'entorn.title': '探索周边环境',
+        'entorn.desc': '奥索纳地区隐藏着距离农庄仅数分钟的自然与文化遗址宝藏。',
+        'entorn.rupit.desc': '中世纪村庄，鹅卵石小巷、悬索桥和壮观的瀑布。',
+        'entorn.monestir.desc': '10世纪罗曼式建筑瑰宝，俯瞰特尔河的绝美景观。',
+        'entorn.ter.desc': '沿河漫步、垂钓以及静听流水声的宁静角落。',
+        'entorn.senderisme.title': '徒步',
+        'entorn.senderisme.desc': '穿越橡树林、麦田，远眺卡布雷拉和蒙特塞尼的远足路线。',
+        'serveis.label': '设施', 'serveis.title': '您需要的一切',
+        'serveis.piscina.title': '私人泳池', 'serveis.piscina.desc': '室外，夏季开放',
+        'serveis.jardi.title': '花园', 'serveis.jardi.desc': '宽敞宁静',
+        'serveis.wifi.title': '免费WiFi', 'serveis.wifi.desc': '全屋覆盖',
+        'serveis.parking.title': '停车场', 'serveis.parking.desc': '免费私人停车',
+        'serveis.natura.title': '自然环境', 'serveis.natura.desc': '宁静纯粹的大自然',
+        'contacte.label': '预订', 'contacte.title': '来放松身心',
+        'contacte.subtitle': '<strong>Jordi</strong> 很乐意为您服务，帮助您规划在奥索纳地区的完美假期。',
+        'contacte.note': '通常在一小时内回复',
+        'contacte.ubicacio': '地点', 'contacte.amfitrio': '房东',
+        'contacte.tipus': '类型', 'contacte.tipus-val': '乡村民宿',
+        'booking.asia-badge': '支持国际在线预订',
+        'booking.title': '在线预订',
+        'booking.subtitle': '在主要国际预订平台上找到我们',
+        'booking.btn': '查看空房 →',
+        'footer.copy': '© 2024 Casa Vella del Cuní. 版权所有。',
+        'nav.faq': '常见问题',
+        'faq.label': '常见问题', 'faq.title': '您需要了解的一切',
+        'faq.desc': '清晰的解答，让您无忧安排住宿。',
+        'faq.q1': '入住和退房时间是什么时候？',
+        'faq.a1': '入住（Check-in）时间为上午11点起。退房（Check-out）时间为下午5点前。',
+        'faq.q2': '可以带宠物吗？',
+        'faq.a2': '很遗憾，卡萨·维利亚·德尔·库尼不接受宠物入住。',
+        'faq.q3': '有停车场吗？',
+        'faq.a3': '有，庄园内设有宽敞的私人停车场，完全免费。',
+        'faq.q4': '游泳池什么时候开放？',
+        'faq.a4': '户外私人泳池从四月至五月开放，秋天气温变冷时关闭。具体开放日期请每年咨询我们。',
+        'faq.q5': '可以使用厨房吗？',
+        'faq.a5': '可以，设备齐全的厨房对住客开放。请注意不含食材，需自行携带食品。',
+        'faq.q6': '有洗衣房吗？',
+        'faq.a6': '有，我们提供洗衣房，适合长期住宿的宾客洗涤衣物及其他需求。',
+        'faq.q7': '最短入住时间是多少？',
+        'faq.a7': '最短入住时间为3晚。如需更短时间的住宿，请直接联系Jordi了解是否有空房。',
+        'form.title': '发送预订申请',
+        'form.sub': '填写表格，我们将通过WhatsApp确认',
+        'form.nom': '姓名', 'form.persones': '人数',
+        'form.arribada': '到达日期', 'form.sortida': '离开日期',
+        'form.missatge': '留言（可选）',
+        'form.btn': '通过WhatsApp发送',
+        'form.note': 'WhatsApp将自动填写所有信息后打开',
+        'faq.q8': '提供机场接送服务吗？',
+        'faq.a8': '提供！对于从西班牙以外出发的住客，我们提供巴塞罗那机场（El Prat）的私人接送服务，直接送您到农庄。请通过WhatsApp联系Jordi询问价格。',
+        'transfer.title': '机场接送服务',
+        'transfer.desc': '专为国际住客提供：我们在巴塞罗那机场（El Prat）接您，直接送到农庄。请通过WhatsApp咨询价格。',
+        'transfer.btn': '咨询价格 →',
+        'arribar.label': '交通信息', 'arribar.title': '从巴塞罗那只需1小时',
+        'arribar.desc': 'Roda de Ter, Osona — 距巴塞罗那市中心65公里',
+        'arribar.cotxe.title': '自驾（推荐）',
+        'arribar.cotxe.desc': '从巴塞罗那市中心经<strong>C-17高速公路向Vic方向行驶约65公里·1小时</strong>。导航：Roda de Ter, Osona。巴塞罗那机场El Prat提供租车服务。',
+        'arribar.tren.title': '火车+出租车',
+        'arribar.tren.desc': 'RENFE火车从<strong>巴塞罗那-Passeig de Gràcia站→Vic站</strong>（约1小时），再从Vic乘出租车到Roda de Ter（约15分钟）。时刻表请查询renfe.com。',
+        'arribar.aeroport.title': '从机场出发',
+        'arribar.aeroport.desc': '<strong>巴塞罗那El Prat机场（BCN）</strong> → A2/C-17 → Roda de Ter。租车约需<strong>1小时15分钟</strong>。'
+      },
+      ja: {
+        'nav.inici': 'ホーム', 'nav.la-casa': '民宿について', 'nav.galeria': 'ギャラリー',
+        'nav.entorn': '周辺環境', 'nav.contacte': 'お問い合わせ', 'nav.reserva': '今すぐ予約',
+        'hero.sub': '1682年に建てられ、丁寧に修復された農家民宿。自然と静寂に包まれた、カタルーニャ州オソナ地方での理想的な田舎の休暇先です。',
+        'hero.btn-cta': '今すぐ予約', 'hero.btn-ghost': '民宿を見る ↓',
+        'about.label': '私たちの物語',
+        'about.title': '三世紀以上の歴史を持つ<br>農家民宿',
+        'about.p1': 'カサ・ヴェリャ・デル・クニは単なる農家民宿ではありません。時間が止まり、自然がそっと語りかけてくる避難所です。1682年に建てられたこのカタルーニャの農家は、その本来の魅力を大切にしながら修復されました：石の壁、木の梁、そして古い家だけが持つ温かな光。',
+        'about.p2': 'ここでは、現代の快適さと何世代にもわたって歴史を刻んできた農家の本物らしさの完璧なバランスを見つけることができます。ホストのJordiが、あなたの滞在が完璧なものになるよう、すべての細部に気を配っています。',
+        'about.stat1': '建設年', 'about.stat2': '歴史の年数', 'about.stat3': '最大人数',
+        'gallery.label': 'スペース', 'gallery.title': '民宿の写真',
+        'gallery.desc': '石、木、自然光。農家のあらゆる隅々に本物の息吹が宿っています。',
+        'gallery.ext': '外観', 'gallery.int': '内観',
+        'entorn.label': '探索', 'entorn.title': '探索できる周辺環境',
+        'entorn.desc': 'オソナ地方には、農家からほんの数分のところに自然と文化遺産の宝があります。',
+        'entorn.rupit.desc': '石畳の路地、吊り橋、壮大な滝がある中世の村。',
+        'entorn.monestir.desc': 'テル川を見渡す印象的な眺めを誇る10世紀のロマネスク様式の宝石。',
+        'entorn.ter.desc': '川沿いの散歩、釣り、水のせせらぎを聴ける穏やかな場所。',
+        'entorn.senderisme.title': 'ハイキング',
+        'entorn.senderisme.desc': 'オーク林、小麦畑を抜け、カブレラとモンツェニーを望むルート。',
+        'serveis.label': '設備', 'serveis.title': '必要なすべて',
+        'serveis.piscina.title': 'プライベートプール', 'serveis.piscina.desc': '屋外、夏季のみ',
+        'serveis.jardi.title': '庭園', 'serveis.jardi.desc': '広々と静か',
+        'serveis.wifi.title': '無料WiFi', 'serveis.wifi.desc': '全館対応',
+        'serveis.parking.title': '駐車場', 'serveis.parking.desc': '無料プライベート',
+        'serveis.natura.title': '自然環境', 'serveis.natura.desc': '静寂と純粋な自然',
+        'contacte.label': '予約', 'contacte.title': '来てリフレッシュしよう',
+        'contacte.subtitle': '<strong>Jordi</strong> がオソナ地方でのご旅行を計画するお手伝いを喜んでいたします。',
+        'contacte.note': '通常1時間以内に返信',
+        'contacte.ubicacio': '場所', 'contacte.amfitrio': 'ホスト',
+        'contacte.tipus': 'タイプ', 'contacte.tipus-val': '農家民宿',
+        'booking.asia-badge': '国際オンライン予約対応',
+        'booking.title': 'オンライン予約',
+        'booking.subtitle': '主要な国際予約プラットフォームで見つけてください',
+        'booking.btn': '空室を確認 →',
+        'footer.copy': '© 2024 Casa Vella del Cuní. 全著作権所有。',
+        'nav.faq': 'よくある質問',
+        'faq.label': 'よくある質問', 'faq.title': '知っておくべきすべてのこと',
+        'faq.desc': '滞在をスムーズに計画するための明確な回答です。',
+        'faq.q1': 'チェックインとチェックアウトの時間は？',
+        'faq.a1': 'チェックインは午前11時以降です。チェックアウトは午後5時までです。',
+        'faq.q2': 'ペットは連れて行けますか？',
+        'faq.a2': '申し訳ありませんが、カサ・ヴェリャ・デル・クニはペット不可です。',
+        'faq.q3': '駐車場はありますか？',
+        'faq.a3': 'はい、敷地内に広々とした無料のプライベート駐車場があります。',
+        'faq.q4': 'プールはいつ利用できますか？',
+        'faq.a4': '屋外プライベートプールは4月〜5月頃から開放し、秋に気温が下がると閉鎖します。年ごとの正確な日程はお問い合わせください。',
+        'faq.q5': 'キッチンは使えますか？',
+        'faq.a5': 'はい、設備の整ったキッチンをご利用いただけます。食材は含まれておらず、ご自身でお持ちください。',
+        'faq.q6': 'ランドリーはありますか？',
+        'faq.a6': 'はい、洗濯室をご利用いただけます。長期滞在の方に便利です。',
+        'faq.q7': '最低宿泊数は？',
+        'faq.a7': '最低宿泊数は3泊です。それ以下の場合は、Jordiに直接ご連絡ください。',
+        'form.title': '予約リクエストを送る',
+        'form.sub': 'フォームに記入すると、WhatsAppで確認します',
+        'form.nom': '氏名', 'form.persones': '人数',
+        'form.arribada': '到着日', 'form.sortida': '出発日',
+        'form.missatge': 'メッセージ（任意）',
+        'form.btn': 'WhatsAppで送る',
+        'form.note': 'すべての情報が自動入力された状態でWhatsAppが開きます',
+        'faq.q8': '空港への送迎サービスはありますか？',
+        'faq.a8': 'はい！スペイン国外からお越しのお客様には、バルセロナ空港（エルプラット）からの専用送迎サービスをご用意しています。農家民宿まで直接お送りします。料金はWhatsAppでJordiに直接お問い合わせください。',
+        'transfer.title': '空港送迎サービス',
+        'transfer.desc': '海外からのお客様向け：バルセロナ空港（エルプラット）でお迎えし、民宿まで直接お送りします。料金はWhatsAppにてお問い合わせください。',
+        'transfer.btn': '料金を問い合わせる →',
+        'arribar.label': 'アクセス', 'arribar.title': 'バルセロナから1時間',
+        'arribar.desc': 'Roda de Ter, Osona — バルセロナ市内から65km',
+        'arribar.cotxe.title': '車（推奨）',
+        'arribar.cotxe.desc': 'バルセロナ市内からC-17高速道路でVic方面へ<strong>約65km・1時間</strong>。カーナビ設定：Roda de Ter, Osona。エルプラット空港でレンタカーが利用可能です。',
+        'arribar.tren.title': '電車＋タクシー',
+        'arribar.tren.desc': 'RENFEで<strong>バルセロナ-Passeig de Gràcia駅 → Vic駅</strong>（約1時間）、その後VicからRoda de TerまでタクシーまたはUber（約15分）。',
+        'arribar.aeroport.title': '空港から',
+        'arribar.aeroport.desc': '<strong>バルセロナ・エルプラット空港（BCN）</strong> → A2/C-17 → Roda de Ter。レンタカーで<strong>約1時間15分</strong>。'
+      },
+      ko: {
+        'nav.inici': '홈', 'nav.la-casa': '민박 소개', 'nav.galeria': '갤러리',
+        'nav.entorn': '주변 환경', 'nav.contacte': '연락처', 'nav.reserva': '지금 예약',
+        'hero.sub': '1682년에 지어져 정성스럽게 복원된 농가 민박. 자연과 고요함으로 둘러싸인 카탈루냐 오소나 지역의 완벽한 시골 휴양지입니다.',
+        'hero.btn-cta': '지금 예약', 'hero.btn-ghost': '민박 보기 ↓',
+        'about.label': '우리의 이야기',
+        'about.title': '3세기 이상의 역사를<br>가진 농가 민박',
+        'about.p1': '카사 베야 델 쿠니는 단순한 농가 민박 그 이상입니다. 시간이 멈추고 자연이 귓가에 속삭이는 피난처입니다. 1682년에 지어진 이 카탈루냐 농가는 원래의 본질을 존중하며 복원되었습니다: 돌담, 나무 들보, 그리고 오래된 집만이 줄 수 있는 따뜻한 빛.',
+        'about.p2': '여기서 현대적인 편안함과 세대를 거쳐 역사를 쌓아온 농가의 진정성 사이에서 완벽한 균형을 찾을 수 있습니다. 호스트 Jordi는 당신의 숙박이 완벽하도록 모든 세부 사항을 세심하게 챙깁니다.',
+        'about.stat1': '건축 연도', 'about.stat2': '역사의 해', 'about.stat3': '최대 인원',
+        'gallery.label': '공간', 'gallery.title': '민박 사진',
+        'gallery.desc': '돌, 나무, 자연 채광. 농가의 모든 구석에서 진정성이 느껴집니다.',
+        'gallery.ext': '외관', 'gallery.int': '내부',
+        'entorn.label': '탐색', 'entorn.title': '탐험할 주변 환경',
+        'entorn.desc': '오소나 지역에는 농가에서 불과 몇 분 거리에 자연과 문화유산의 보물들이 숨어 있습니다.',
+        'entorn.rupit.desc': '자갈 골목, 현수교, 장관을 이루는 폭포가 있는 중세 마을.',
+        'entorn.monestir.desc': '테르 강을 내려다보는 인상적인 전망을 자랑하는 10세기 로마네스크 양식의 보석.',
+        'entorn.ter.desc': '강변 산책, 낚시, 그리고 물 소리를 들을 수 있는 평화로운 장소.',
+        'entorn.senderisme.title': '하이킹',
+        'entorn.senderisme.desc': '참나무 숲, 밀밭을 지나 카브레라와 몬트세니를 바라보는 코스.',
+        'serveis.label': '시설', 'serveis.title': '필요한 모든 것',
+        'serveis.piscina.title': '전용 수영장', 'serveis.piscina.desc': '야외, 여름 시즌',
+        'serveis.jardi.title': '정원', 'serveis.jardi.desc': '넓고 조용한',
+        'serveis.wifi.title': '무료 WiFi', 'serveis.wifi.desc': '전관 연결',
+        'serveis.parking.title': '주차장', 'serveis.parking.desc': '무료 전용 주차',
+        'serveis.natura.title': '자연환경', 'serveis.natura.desc': '고요한 순수한 자연',
+        'contacte.label': '예약', 'contacte.title': '와서 쉬어가세요',
+        'contacte.subtitle': '<strong>Jordi</strong>가 오소나 지역에서의 여행 계획을 기꺼이 도와드리겠습니다.',
+        'contacte.note': '보통 1시간 이내 응답',
+        'contacte.ubicacio': '위치', 'contacte.amfitrio': '호스트',
+        'contacte.tipus': '유형', 'contacte.tipus-val': '농가 민박',
+        'booking.asia-badge': '국제 온라인 예약 가능',
+        'booking.title': '온라인 예약',
+        'booking.subtitle': '주요 국제 예약 플랫폼에서 찾아보세요',
+        'booking.btn': '예약 가능 확인 →',
+        'footer.copy': '© 2024 Casa Vella del Cuní. 모든 권리 보유.',
+        'nav.faq': 'FAQ',
+        'faq.label': '자주 묻는 질문', 'faq.title': '알아야 할 모든 것',
+        'faq.desc': '놀라움 없이 숙박을 준비하기 위한 명확한 답변입니다.',
+        'faq.q1': '체크인 및 체크아웃 시간은 언제인가요?',
+        'faq.a1': '체크인은 오전 11시부터입니다. 체크아웃은 오후 5시까지입니다.',
+        'faq.q2': '반려동물을 데려올 수 있나요?',
+        'faq.a2': '죄송하지만 카사 베야 델 쿠니는 반려동물을 허용하지 않습니다.',
+        'faq.q3': '주차 공간이 있나요?',
+        'faq.a3': '네, 부지 내에 넓은 전용 주차장이 무료로 제공됩니다.',
+        'faq.q4': '수영장은 언제 이용할 수 있나요?',
+        'faq.a4': '야외 개인 수영장은 4~5월부터 개장하여 가을 기온이 내려가면 닫습니다. 연도별 정확한 날짜는 문의해 주세요.',
+        'faq.q5': '주방을 사용할 수 있나요?',
+        'faq.a5': '네, 잘 갖춰진 주방을 이용하실 수 있습니다. 식재료는 포함되지 않으므로 직접 준비하셔야 합니다.',
+        'faq.q6': '세탁실이 있나요?',
+        'faq.a6': '네, 세탁실을 이용하실 수 있습니다. 장기 투숙객에게 편리합니다.',
+        'faq.q7': '최소 숙박 일수는 얼마인가요?',
+        'faq.a7': '최소 숙박은 3박입니다. 더 짧은 기간을 원하시면 Jordi에게 직접 문의하세요.',
+        'form.title': '예약 요청 보내기',
+        'form.sub': '양식을 작성하면 WhatsApp으로 확인해 드립니다',
+        'form.nom': '이름', 'form.persones': '인원 수',
+        'form.arribada': '도착일', 'form.sortida': '출발일',
+        'form.missatge': '메시지 (선택)',
+        'form.btn': 'WhatsApp으로 보내기',
+        'form.note': '모든 정보가 자동으로 입력된 상태로 WhatsApp이 열립니다',
+        'arribar.label': '오시는 길', 'arribar.title': '바르셀로나에서 1시간',
+        'arribar.desc': 'Roda de Ter, Osona — 바르셀로나 도심에서 65km',
+        'arribar.cotxe.title': '자동차 (권장)',
+        'arribar.cotxe.desc': '바르셀로나 도심에서 C-17 고속도로 Vic 방면으로 <strong>약 65km · 1시간</strong>. 내비게이션: Roda de Ter, Osona. 엘프라트 공항에서 렌터카 이용 가능.',
+        'arribar.tren.title': '기차 + 택시',
+        'arribar.tren.desc': 'RENFE <strong>바르셀로나-Passeig de Gràcia역 → Vic역</strong> (약 1시간), Vic에서 Roda de Ter까지 택시 약 15분. 시간표: renfe.com.',
+        'arribar.aeroport.title': '공항에서',
+        'arribar.aeroport.desc': '<strong>바르셀로나 엘프라트 공항 (BCN)</strong> → A2/C-17 → Roda de Ter. 렌터카로 <strong>약 1시간 15분</strong>.'
+      },
+      th: {
+        'arribar.label': 'วิธีเดินทาง', 'arribar.title': 'จากบาร์เซโลนาเพียง 1 ชั่วโมง',
+        'arribar.desc': 'Roda de Ter, Osona — ห่างจากใจกลางบาร์เซโลนา 65 กม.',
+        'arribar.cotxe.title': 'ขับรถ (แนะนำ)',
+        'arribar.cotxe.desc': 'จากใจกลางบาร์เซโลนาผ่านทางด่วน C-17 ทิศทาง Vic <strong>ประมาณ 65 กม. · 1 ชั่วโมง</strong> GPS: Roda de Ter, Osona มีบริการเช่ารถที่สนามบิน El Prat',
+        'arribar.tren.title': 'รถไฟ + แท็กซี่',
+        'arribar.tren.desc': 'RENFE จาก <strong>Barcelona-Passeig de Gràcia → Vic</strong> (ประมาณ 1 ชั่วโมง) จากนั้นแท็กซี่จาก Vic ไป Roda de Ter (ประมาณ 15 นาที) ดูตารางเวลาที่ renfe.com',
+        'arribar.aeroport.title': 'จากสนามบิน',
+        'arribar.aeroport.desc': '<strong>สนามบินบาร์เซโลนา El Prat (BCN)</strong> → A2/C-17 → Roda de Ter ประมาณ <strong>1 ชั่วโมง 15 นาที</strong> โดยรถเช่า'
+      }
+    };
+
+      th: {
+        'nav.inici': 'หน้าแรก', 'nav.la-casa': 'บ้านพัก', 'nav.galeria': 'แกลเลอรี่',
+        'nav.entorn': 'สถานที่ท่องเที่ยว', 'nav.contacte': 'ติดต่อเรา', 'nav.reserva': 'จองทันที',
+        'nav.faq': 'คำถามที่พบบ่อย',
+        'hero.sub': 'บ้านนาอายุกว่า 342 ปีที่ได้รับการบูรณะอย่างพิถีพิถัน ล้อมรอบด้วยธรรมชาติและความสงบ แหล่งพักผ่อนในชนบทที่คุณต้องการ ใจกลางแคว้นคาตาลุญญา',
+        'hero.btn-cta': 'จองทันที', 'hero.btn-ghost': 'ชมบ้านพัก ↓',
+        'about.label': 'เรื่องราวของเรา',
+        'about.title': 'บ้านนาที่มีประวัติศาสตร์<br>มากกว่า 3 ศตวรรษ',
+        'about.p1': 'Casa Vella del Cuní ไม่ได้เป็นเพียงบ้านพักชนบท แต่เป็นที่หลบพักที่เวลาหยุดนิ่งและธรรมชาติกระซิบเข้าหู สร้างขึ้นในปี ค.ศ. 1682 บ้านนาแห่งนี้ในแคว้นคาตาลุญญาได้รับการบูรณะด้วยความเคารพต่อแก่นแท้ดั้งเดิม ไม่ว่าจะเป็นกำแพงหิน คานไม้ และแสงสีทองที่มีเพียงบ้านเก่าเท่านั้นที่ให้ได้',
+        'about.p2': 'ที่นี่คุณจะพบสมดุลระหว่างความสะดวกสบายสมัยใหม่กับความแท้จริงของบ้านนาที่เห็นการผ่านไปของหลายชั่วอายุคน Jordi เจ้าของบ้านดูแลทุกรายละเอียดเพื่อให้การพักของคุณสมบูรณ์แบบ',
+        'about.stat1': 'ปีที่สร้าง', 'about.stat2': 'ปีแห่งประวัติศาสตร์', 'about.stat3': 'รับได้สูงสุด',
+        'gallery.label': 'พื้นที่', 'gallery.title': 'บ้านพักในภาพ',
+        'gallery.desc': 'หิน ไม้ และแสงธรรมชาติ ทุกมุมของบ้านนาเต็มไปด้วยความแท้จริง',
+        'gallery.ext': 'ภายนอก', 'gallery.int': 'ภายใน',
+        'entorn.label': 'สำรวจ', 'entorn.title': 'สิ่งแวดล้อมที่น่าสำรวจ',
+        'entorn.desc': 'แคว้น Osona ซ่อนสมบัติทางธรรมชาติและมรดกวัฒนธรรมไว้เพียงไม่กี่นาทีจากบ้านพัก',
+        'entorn.rupit.desc': 'หมู่บ้านยุคกลางที่มีตรอกซอกซอยที่ปูด้วยหิน สะพานแขวน และน้ำตกที่งดงาม',
+        'entorn.monestir.desc': 'อัญมณีโรมาเนสก์ในศตวรรษที่ 10 ที่มีทิวทัศน์น่าประทับใจเหนือแม่น้ำ Ter',
+        'entorn.ter.desc': 'เดินเล่นริมแม่น้ำ ตกปลา และมุมสงบที่ฟังเสียงน้ำไหล',
+        'entorn.senderisme.title': 'เดินป่า',
+        'entorn.senderisme.desc': 'เส้นทางผ่านป่าโอ๊ก ทุ่งข้าวสาลี และวิวทิวทัศน์ของ Cabrera และ Montseny',
+        'serveis.label': 'สิ่งอำนวยความสะดวก', 'serveis.title': 'ทุกสิ่งที่คุณต้องการ',
+        'serveis.piscina.title': 'สระว่ายน้ำส่วนตัว', 'serveis.piscina.desc': 'กลางแจ้ง ฤดูร้อน',
+        'serveis.jardi.title': 'สวน', 'serveis.jardi.desc': 'กว้างขวางและเงียบสงบ',
+        'serveis.wifi.title': 'WiFi ฟรี', 'serveis.wifi.desc': 'ครอบคลุมทั้งบ้าน',
+        'serveis.parking.title': 'ที่จอดรถ', 'serveis.parking.desc': 'ส่วนตัวและฟรี',
+        'serveis.natura.title': 'ธรรมชาติ', 'serveis.natura.desc': 'ความเงียบสงบและธรรมชาติบริสุทธิ์',
+        'contacte.label': 'จอง', 'contacte.title': 'มาพักผ่อน',
+        'contacte.subtitle': '<strong>Jordi</strong> ยินดีต้อนรับและช่วยวางแผนการพักผ่อนของคุณในแคว้น Osona',
+        'contacte.note': 'มักตอบภายในหนึ่งชั่วโมง',
+        'contacte.ubicacio': 'ที่ตั้ง', 'contacte.amfitrio': 'เจ้าของบ้าน',
+        'contacte.tipus': 'ประเภท', 'contacte.tipus-val': 'บ้านพักชนบท',
+        'booking.asia-badge': 'พร้อมรับจองออนไลน์ระดับนานาชาติ',
+        'booking.title': 'จองออนไลน์',
+        'booking.subtitle': 'ค้นหาเราได้ที่แพลตฟอร์มจองระดับนานาชาติชั้นนำ',
+        'booking.btn': 'ตรวจสอบห้องว่าง →',
+        'footer.copy': '© 2024 Casa Vella del Cuní. สงวนลิขสิทธิ์ทุกประการ',
+        'faq.label': 'คำถามที่พบบ่อย', 'faq.title': 'ทุกสิ่งที่คุณต้องรู้',
+        'faq.desc': 'คำตอบที่ชัดเจนเพื่อเตรียมการพักของคุณโดยไม่มีเรื่องประหลาดใจ',
+        'faq.q1': 'เช็คอินและเช็คเอาต์กี่โมง?',
+        'faq.a1': 'เช็คอินตั้งแต่ 11.00 น. เช็คเอาต์ไม่เกิน 17.00 น.',
+        'faq.q2': 'สามารถพาสัตว์เลี้ยงมาได้ไหม?',
+        'faq.a2': 'ขออภัย ทางบ้านพักไม่อนุญาตให้นำสัตว์เลี้ยงเข้าพัก',
+        'faq.q3': 'มีที่จอดรถไหม?',
+        'faq.a3': 'มีที่จอดรถส่วนตัวกว้างขวางในบริเวณบ้านพักโดยไม่มีค่าใช้จ่าย',
+        'faq.q4': 'สระว่ายน้ำเปิดช่วงไหน?',
+        'faq.a4': 'สระว่ายน้ำกลางแจ้งส่วนตัวเปิดตั้งแต่เดือนเมษายน–พฤษภาคมและปิดเมื่ออากาศเย็นในฤดูใบไม้ร่วง กรุณาสอบถามวันที่เปิดปิดที่แน่นอนในแต่ละปี',
+        'faq.q5': 'สามารถใช้ห้องครัวได้ไหม?',
+        'faq.a5': 'ได้ ห้องครัวพร้อมอุปกรณ์ครบครันให้บริการสำหรับแขก แต่ไม่มีวัตถุดิบรวม กรุณาเตรียมอาหารมาเอง ซุปเปอร์มาร์เก็ตอยู่ใกล้เคียงในเมือง Roda de Ter',
+        'faq.q6': 'มีห้องซักผ้าไหม?',
+        'faq.a6': 'มีห้องซักผ้าสำหรับการพักระยะยาว',
+        'faq.q7': 'พักขั้นต่ำกี่คืน?',
+        'faq.a7': 'ขั้นต่ำ 3 คืน สำหรับระยะสั้นกว่านั้นกรุณาติดต่อ Jordi โดยตรง',
+        'form.title': 'ส่งคำขอจอง',
+        'form.sub': 'กรอกแบบฟอร์มและเราจะยืนยันผ่าน WhatsApp',
+        'form.nom': 'ชื่อ-นามสกุล', 'form.persones': 'จำนวนผู้พัก',
+        'form.arribada': 'วันเช็คอิน', 'form.sortida': 'วันเช็คเอาต์',
+        'form.missatge': 'ข้อความ (ไม่บังคับ)',
+        'form.btn': 'ส่งผ่าน WhatsApp',
+        'form.note': 'WhatsApp จะเปิดพร้อมข้อมูลที่กรอกแล้วโดยอัตโนมัติ'
+      }
+    };
+
+    /* ── APPLY LANGUAGE ── */
+    function applyLang(lang) {
+      var d = T[lang];
+      if (!d) return;
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        if (d[key] !== undefined) el.textContent = d[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n-html');
+        if (d[key] !== undefined) el.innerHTML = d[key];
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+      // Show LINE button for Asian markets where LINE is primary
+      var lineBtn = document.getElementById('lineBtn');
+      if (lineBtn) {
+        lineBtn.style.display = ['ja','ko','th','zh'].includes(lang) ? 'inline-flex' : 'none';
+      }
+    }
+
+    /* ── Header scroll ── */
+    window.addEventListener('scroll', function() {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 1);
+    });
+
+    /* ── Scroll progress bar ── */
+    var scrollBar = document.getElementById('scrollBar');
+    window.addEventListener('scroll', function() {
+      var pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+      scrollBar.style.width = pct + '%';
+    });
+
+    /* ── Mobile menu ── */
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileNav = document.getElementById('mobileNav');
+    menuBtn.addEventListener('click', function() {
+      menuBtn.classList.toggle('open');
+      mobileNav.classList.toggle('open');
+      document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+    function closeMenu() {
+      menuBtn.classList.remove('open');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ── Lightbox ── */
+    function openLightbox(el) {
+      var img = el.querySelector('img');
+      var lb = document.getElementById('lightbox');
+      document.getElementById('lightboxImg').src = img.src;
+      document.getElementById('lightboxImg').alt = img.alt;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    /* ── Carousel ── */
+    var carouselIndex = { ext: 0, int: 0 };
+    function carouselMove(id, dir) {
+      var track = document.getElementById('carousel-' + id);
+      var items = track.querySelectorAll('.gallery-item');
+      var visible = window.innerWidth <= 600 ? 1 : window.innerWidth <= 900 ? 2 : 3;
+      var max = Math.max(0, items.length - visible);
+      carouselIndex[id] = Math.min(Math.max(carouselIndex[id] + dir, 0), max);
+      var itemW = items[0].offsetWidth + 16;
+      track.style.transform = 'translateX(-' + (carouselIndex[id] * itemW) + 'px)';
+    }
+
+    /* ── GSAP Animations ── */
+    gsap.registerPlugin(ScrollTrigger);
+    document.body.classList.add('js-anim-ready');
+
+    // Hero entrance
+    var tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+    tl.to('#heroBadge',   { opacity: 1, y: 0, duration: .6 }, .3)
+      .to('#heroH1',      { opacity: 1, y: 0, duration: .8 }, .5)
+      .to('#heroSub',     { opacity: 1, y: 0, duration: .6 }, .8)
+      .to('#heroActions', { opacity: 1, y: 0, duration: .6 }, 1.0);
+
+    // Scroll reveal
+    gsap.utils.toArray('.gs-hidden').forEach(function(el) {
+      gsap.to(el, {
+        opacity: 1, y: 0, duration: .7, ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 88%' }
+      });
+    });
+
+    // Infinite auto-scroll carousels
+    function setupInfiniteScroll(id, cls) {
+      var track = document.getElementById('carousel-' + id);
+      if (!track) return;
+      var origItems = Array.from(track.children);
+      origItems.forEach(function(item) {
+        var clone = item.cloneNode(true);
+        clone.onclick = function() { openLightbox(clone); };
+        track.appendChild(clone);
+      });
+      track.classList.add(cls);
+    }
+    setupInfiniteScroll('ext', 'auto-ltr');
+    setupInfiniteScroll('int', 'auto-rtl');
+
+    /* ── FAQ Accordion ── */
+    function toggleFaq(btn) {
+      var body = btn.nextElementSibling;
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      // Close all others
+      document.querySelectorAll('.faq-btn').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.style.maxHeight = null;
+      });
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    }
+
+    /* ── WhatsApp booking form ── */
+    function enviarWA() {
+      var nom = document.getElementById('fNom').value.trim();
+      var persones = document.getElementById('fPersones').value;
+      var arribada = document.getElementById('fArribada').value;
+      var sortida = document.getElementById('fSortida').value;
+      var missatge = document.getElementById('fMissatge').value.trim();
+      var lang = localStorage.getItem('lang') || 'ca';
+
+      var labels = {
+        ca: { nom: 'Nom', persones: 'Persones', arribada: 'Arribada', sortida: 'Sortida', msg: 'Missatge', hola: 'Hola Jordi! Voldria fer una reserva a la Casa Vella del Cuní.' },
+        es: { nom: 'Nombre', persones: 'Personas', arribada: 'Llegada', sortida: 'Salida', msg: 'Mensaje', hola: 'Hola Jordi! Me gustaría hacer una reserva en la Casa Vella del Cuní.' },
+        en: { nom: 'Name', persones: 'Guests', arribada: 'Arrival', sortida: 'Departure', msg: 'Message', hola: 'Hello Jordi! I would like to make a booking at Casa Vella del Cuní.' },
+        zh: { nom: '姓名', persones: '人数', arribada: '到达日期', sortida: '离开日期', msg: '备注', hola: '您好 Jordi！我想预订卡萨维利亚德尔库尼。' },
+        ja: { nom: '氏名', persones: '人数', arribada: '到着日', sortida: '出発日', msg: 'メモ', hola: 'こんにちは Jordi！カサ・ヴェリャ・デル・クニを予約したいです。' },
+        ko: { nom: '이름', persones: '인원', arribada: '도착일', sortida: '출발일', msg: '메모', hola: '안녕하세요 Jordi! 카사 베야 델 쿠니를 예약하고 싶습니다.' },
+        th: { nom: 'ชื่อ', persones: 'จำนวนผู้พัก', arribada: 'วันเช็คอิน', sortida: 'วันเช็คเอาต์', msg: 'ข้อความ', hola: 'สวัสดีครับ/ค่ะ Jordi! ต้องการจองบ้านพัก Casa Vella del Cuní' }
+      };
+      var l = labels[lang] || labels['ca'];
+
+      var text = l.hola + '\n\n';
+      if (nom) text += l.nom + ': ' + nom + '\n';
+      text += l.persones + ': ' + persones + '\n';
+      if (arribada) text += l.arribada + ': ' + arribada + '\n';
+      if (sortida) text += l.sortida + ': ' + sortida + '\n';
+      if (missatge) text += l.msg + ': ' + missatge + '\n';
+
+      var url = 'https://wa.me/34630936545?text=' + encodeURIComponent(text);
+      window.open(url, '_blank');
+    }
+
+    /* ── Init language ── */
+    var savedLang = localStorage.getItem('lang');
+    if (savedLang && T[savedLang]) {
+      applyLang(savedLang);
+    }
+  </script>
+</body>
+</html>
