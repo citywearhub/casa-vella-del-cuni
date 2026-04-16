@@ -120,59 +120,33 @@
     .sobre-imgs img:not(:first-child) { height: 180px; }
 
     /* GALERIA */
-    #galeria { background: var(--dark); overflow: hidden; padding: 80px 0; }
-    .galeria-header { max-width: 1280px; margin: 0 auto 48px; padding: 0 40px; }
-    .galeria-header .section-title { color: var(--white); }
-
-    /* CAROUSEL TRACKS */
-    .carousel-wrap { overflow: hidden; width: 100%; margin-bottom: 12px; cursor: grab; user-select: none; }
-    .carousel-wrap:active { cursor: grabbing; }
-    .carousel-track {
-      display: flex; gap: 12px;
-      width: max-content;
-      will-change: transform;
+    #galeria { background: var(--dark); padding: 80px 40px; }
+    #galeria .section-title { color: var(--white); }
+    .galeria-header { max-width: 1280px; margin: 0 auto 48px; }
+    .galeria-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+    .gtab {
+      background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
+      padding: 7px 20px; font-family: var(--ff-body); font-size: 12px; font-weight: 400;
+      letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5);
+      cursor: pointer; transition: all 0.25s;
     }
-    .carousel-track.row1 { animation: scroll-left 60s linear infinite; }
-    .carousel-track.row2 { animation: scroll-right 75s linear infinite; }
-    .carousel-track.row3 { animation: scroll-left 50s linear infinite; }
-    .carousel-wrap:hover .carousel-track { animation-play-state: paused; }
-
-    @keyframes scroll-left {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .gtab.active, .gtab:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
+    .masonry {
+      max-width: 1280px; margin: 0 auto;
+      columns: 4; column-gap: 10px;
     }
-    @keyframes scroll-right {
-      0%   { transform: translateX(-50%); }
-      100% { transform: translateX(0); }
+    .masonry-item {
+      break-inside: avoid; margin-bottom: 10px;
+      overflow: hidden; border-radius: 4px; cursor: pointer; display: block;
     }
-
-    .c-item {
-      flex: 0 0 340px; width: 340px; height: 240px;
-      overflow: hidden; border-radius: 4px; cursor: pointer;
-      position: relative;
+    .masonry-item img {
+      width: 100%; display: block; object-fit: cover;
+      transition: transform 0.4s ease, opacity 0.3s ease;
     }
-    .c-item img {
-      width: 100%; height: 100%; object-fit: cover; display: block;
-      transition: transform 0.5s ease;
-      pointer-events: none;
-    }
-    .c-item:hover img { transform: scale(1.06); }
-    .c-item.tall { flex: 0 0 240px; width: 240px; height: 320px; }
-    .c-item.wide { flex: 0 0 480px; width: 480px; }
-
-    @media (max-width: 768px) {
-      .c-item { flex: 0 0 260px; width: 260px; height: 190px; }
-      .c-item.tall { flex: 0 0 190px; width: 190px; height: 260px; }
-      .c-item.wide { flex: 0 0 360px; width: 360px; }
-      .carousel-track.row1 { animation-duration: 40s; }
-      .carousel-track.row2 { animation-duration: 50s; }
-      .carousel-track.row3 { animation-duration: 35s; }
-    }
-    @media (max-width: 480px) {
-      .c-item { flex: 0 0 200px; width: 200px; height: 150px; }
-      .c-item.tall { flex: 0 0 150px; width: 150px; height: 200px; }
-      .c-item.wide { flex: 0 0 280px; width: 280px; }
-    }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-item.hidden { display: none; }
+    @media (max-width: 1024px) { .masonry { columns: 3; } }
+    @media (max-width: 640px)  { .masonry { columns: 2; } }
 
     /* SERVEIS */
     #serveis { background: var(--white); }
@@ -417,121 +391,169 @@
   <div class="galeria-header reveal">
     <p class="section-tag" data-i18n="galeria_tag">Imatges</p>
     <h2 class="section-title" data-i18n="galeria_title">La casa<br><em>per dins i per fora</em></h2>
-  </div>
-  <div class="carousel-wrap">
-    <div class="carousel-track row1">
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7718.jpeg" alt="Facade" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7748.jpeg" alt="Exterior" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7711.jpeg" alt="Exterior 2" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7722.jpeg" alt="Jardi" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7724.jpeg" alt="Entrada" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7730.jpeg" alt="Detall" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7732.jpeg" alt="Terrassa" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7733.jpeg" alt="Entorn" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7743.jpeg" alt="Vistes" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7744.jpeg" alt="Exterior tardor" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7746.jpeg" alt="Pati" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7747.jpeg" alt="Entrada principal" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7753.jpeg" alt="Paisatge" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2581.jpg" alt="Primavera" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2588.jpg" alt="Exterior abril" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2603.jpg" alt="Facade abril" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2621.jpg" alt="Jardi abril" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2647.JPG" alt="Exterior" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2652.JPG" alt="Detall" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7718.jpeg" alt="Facade" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7748.jpeg" alt="Exterior" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7711.jpeg" alt="Exterior 2" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7722.jpeg" alt="Jardi" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7724.jpeg" alt="Entrada" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7730.jpeg" alt="Detall" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7732.jpeg" alt="Terrassa" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7733.jpeg" alt="Entorn" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7743.jpeg" alt="Vistes" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7744.jpeg" alt="Exterior tardor" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7746.jpeg" alt="Pati" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7747.jpeg" alt="Entrada principal" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos-noves/IMG_7753.jpeg" alt="Paisatge" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2581.jpg" alt="Primavera" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2588.jpg" alt="Exterior abril" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2603.jpg" alt="Facade abril" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2621.jpg" alt="Jardi abril" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2647.JPG" alt="Exterior" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos casavella abril/IMG_2652.JPG" alt="Detall" loading="lazy"></div>
+    <div class="galeria-tabs">
+      <button class="gtab active" onclick="filterTab(this,'all')" data-i18n="gf_all">Totes</button>
+      <button class="gtab" onclick="filterTab(this,'ext')" data-i18n="gf_ext">Exterior</button>
+      <button class="gtab" onclick="filterTab(this,'int')" data-i18n="gf_int">Interiors</button>
+      <button class="gtab" onclick="filterTab(this,'hab')" data-i18n="gf_hab">Habitacions</button>
     </div>
   </div>
-  <div class="carousel-wrap">
-    <div class="carousel-track row2">
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/menjador general.PNG" alt="Menjador general" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuina.PNG" alt="Cuina" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuinaa.PNG" alt="Cuina 2" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/foto menjador.PNG" alt="Menjador" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/menjador 2.PNG" alt="Menjador 2" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/menjadorr.PNG" alt="Menjador 3" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/escales.PNG" alt="Escales" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/lavabo.PNG" alt="Lavabo" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuni fora.PNG" alt="Vista exterior" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cales.PNG" alt="Detall cales" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cantirs.PNG" alt="Cantirs" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuadre menjador 2.PNG" alt="Detall menjador" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/suite.PNG" alt="Suite" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/menjador general.PNG" alt="Menjador general" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuina.PNG" alt="Cuina" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuinaa.PNG" alt="Cuina 2" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/foto menjador.PNG" alt="Menjador" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/menjador 2.PNG" alt="Menjador 2" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/menjadorr.PNG" alt="Menjador 3" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/escales.PNG" alt="Escales" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/lavabo.PNG" alt="Lavabo" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuni fora.PNG" alt="Vista exterior" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cales.PNG" alt="Detall cales" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cantirs.PNG" alt="Cantirs" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/cuadre menjador 2.PNG" alt="Detall menjador" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos booking/fotos 1/suite.PNG" alt="Suite" loading="lazy"></div>
+  <div class="masonry reveal" id="masonry">
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7718.jpeg')">
+      <img src="fotos-noves/IMG_7718.jpeg" alt="Facade" loading="lazy">
     </div>
-  </div>
-  <div class="carousel-wrap">
-    <div class="carousel-track row3">
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2602.jpg" alt="Habitacio doble" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1884.png" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1886.png" alt="Habitacio 2" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1888.png" alt="Habitacio 3" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1889.png" alt="Habitacio 4" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1891.png" alt="Habitacio 5" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1893.png" alt="Habitacio 6" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1895.png" alt="Habitacio 7" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1899.png" alt="Habitacio 8" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1902.png" alt="Habitacio 9" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1907.JPG" alt="Habitacio 10" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1909.png" alt="Habitacio 11" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1912.png" alt="Habitacio 12" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2575.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2579.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2593.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2597.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2598.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2604.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/NPED0827.JPG" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2602.jpg" alt="Habitacio doble" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1884.png" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1886.png" alt="Habitacio 2" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1888.png" alt="Habitacio 3" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1889.png" alt="Habitacio 4" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1891.png" alt="Habitacio 5" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1893.png" alt="Habitacio 6" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1895.png" alt="Habitacio 7" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1899.png" alt="Habitacio 8" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1902.png" alt="Habitacio 9" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1907.JPG" alt="Habitacio 10" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1909.png" alt="Habitacio 11" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_1912.png" alt="Habitacio 12" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2575.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2579.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item wide" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2593.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2597.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item tall" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2598.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/IMG_2604.jpg" alt="Habitacio" loading="lazy"></div>
-    <div class="c-item" onclick="openLightbox(this.querySelector('img').src)"><img src="fotos hab/NPED0827.JPG" alt="Habitacio" loading="lazy"></div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7748.jpeg')">
+      <img src="fotos-noves/IMG_7748.jpeg" alt="Exterior masia" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7711.jpeg')">
+      <img src="fotos-noves/IMG_7711.jpeg" alt="Exterior 2" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7722.jpeg')">
+      <img src="fotos-noves/IMG_7722.jpeg" alt="Jardi" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7724.jpeg')">
+      <img src="fotos-noves/IMG_7724.jpeg" alt="Entrada" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7730.jpeg')">
+      <img src="fotos-noves/IMG_7730.jpeg" alt="Detall pedra" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7732.jpeg')">
+      <img src="fotos-noves/IMG_7732.jpeg" alt="Terrassa" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7733.jpeg')">
+      <img src="fotos-noves/IMG_7733.jpeg" alt="Entorn" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7743.jpeg')">
+      <img src="fotos-noves/IMG_7743.jpeg" alt="Vistes" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7744.jpeg')">
+      <img src="fotos-noves/IMG_7744.jpeg" alt="Exterior tardor" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7746.jpeg')">
+      <img src="fotos-noves/IMG_7746.jpeg" alt="Pati" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7747.jpeg')">
+      <img src="fotos-noves/IMG_7747.jpeg" alt="Entrada principal" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7753.jpeg')">
+      <img src="fotos-noves/IMG_7753.jpeg" alt="Paisatge" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2581.jpg')">
+      <img src="fotos casavella abril/IMG_2581.jpg" alt="Primavera" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2588.jpg')">
+      <img src="fotos casavella abril/IMG_2588.jpg" alt="Exterior abril" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2603.jpg')">
+      <img src="fotos casavella abril/IMG_2603.jpg" alt="Facade abril" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2621.jpg')">
+      <img src="fotos casavella abril/IMG_2621.jpg" alt="Jardi abril" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2647.JPG')">
+      <img src="fotos casavella abril/IMG_2647.JPG" alt="Exterior" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2652.JPG')">
+      <img src="fotos casavella abril/IMG_2652.JPG" alt="Detall" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/menjador general.PNG')">
+      <img src="fotos booking/fotos 1/menjador general.PNG" alt="Menjador general" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuina.PNG')">
+      <img src="fotos booking/fotos 1/cuina.PNG" alt="Cuina" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuinaa.PNG')">
+      <img src="fotos booking/fotos 1/cuinaa.PNG" alt="Cuina 2" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/foto menjador.PNG')">
+      <img src="fotos booking/fotos 1/foto menjador.PNG" alt="Menjador" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/menjador 2.PNG')">
+      <img src="fotos booking/fotos 1/menjador 2.PNG" alt="Menjador 2" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/menjadorr.PNG')">
+      <img src="fotos booking/fotos 1/menjadorr.PNG" alt="Menjador 3" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/escales.PNG')">
+      <img src="fotos booking/fotos 1/escales.PNG" alt="Escales" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/lavabo.PNG')">
+      <img src="fotos booking/fotos 1/lavabo.PNG" alt="Lavabo" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuni fora.PNG')">
+      <img src="fotos booking/fotos 1/cuni fora.PNG" alt="Vista exterior" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cales.PNG')">
+      <img src="fotos booking/fotos 1/cales.PNG" alt="Detall cales" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cantirs.PNG')">
+      <img src="fotos booking/fotos 1/cantirs.PNG" alt="Cantirs" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuadre menjador 2.PNG')">
+      <img src="fotos booking/fotos 1/cuadre menjador 2.PNG" alt="Quadre menjador" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/suite.PNG')">
+      <img src="fotos booking/fotos 1/suite.PNG" alt="Suite" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2602.jpg')">
+      <img src="fotos hab/IMG_2602.jpg" alt="Habitacio doble" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1884.png')">
+      <img src="fotos hab/IMG_1884.png" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1886.png')">
+      <img src="fotos hab/IMG_1886.png" alt="Habitacio 2" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1888.png')">
+      <img src="fotos hab/IMG_1888.png" alt="Habitacio 3" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1889.png')">
+      <img src="fotos hab/IMG_1889.png" alt="Habitacio 4" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1891.png')">
+      <img src="fotos hab/IMG_1891.png" alt="Habitacio 5" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1893.png')">
+      <img src="fotos hab/IMG_1893.png" alt="Habitacio 6" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1895.png')">
+      <img src="fotos hab/IMG_1895.png" alt="Habitacio 7" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1899.png')">
+      <img src="fotos hab/IMG_1899.png" alt="Habitacio 8" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1902.png')">
+      <img src="fotos hab/IMG_1902.png" alt="Habitacio 9" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1907.JPG')">
+      <img src="fotos hab/IMG_1907.JPG" alt="Habitacio 10" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1909.png')">
+      <img src="fotos hab/IMG_1909.png" alt="Habitacio 11" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1912.png')">
+      <img src="fotos hab/IMG_1912.png" alt="Habitacio 12" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2575.jpg')">
+      <img src="fotos hab/IMG_2575.jpg" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2579.jpg')">
+      <img src="fotos hab/IMG_2579.jpg" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2593.jpg')">
+      <img src="fotos hab/IMG_2593.jpg" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2597.jpg')">
+      <img src="fotos hab/IMG_2597.jpg" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2598.jpg')">
+      <img src="fotos hab/IMG_2598.jpg" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2604.jpg')">
+      <img src="fotos hab/IMG_2604.jpg" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="masonry-item" data-cat="hab" onclick="openLightbox('fotos hab/NPED0827.JPG')">
+      <img src="fotos hab/NPED0827.JPG" alt="Habitacio" loading="lazy">
     </div>
   </div>
 </section>
@@ -835,6 +857,7 @@
       sobre_body1: "La Casa Vella del Cuní és una masia de pedra del segle XVII situada a Roda de Ter, al cor de la plana de Vic. Conserva l'estructura original amb arcs de mig punt, bigues de fusta i parets de pedra, combinades amb les comoditats modernes necessàries per a un descans complet.",
       sobre_body2: "El Jordi i la família la posen a disposició de grups que busquen un espai privat, ampli i autèntic: celebracions familiars, escapades entre amics, retirs d'empresa o estades rurals tranquil·les.",
       galeria_tag: 'Imatges', galeria_title: 'La casa<br><em>per dins i per fora</em>',
+      gf_all: 'Totes', gf_ext: 'Exterior', gf_int: 'Interiors', gf_hab: 'Habitacions',
       serveis_tag: 'Comoditats', serveis_title: 'Tot el que<br><em>necessites</em>',
       s1_title: 'Piscina privada', s1_desc: 'Piscina exterior d\'ús exclusiu, amb zona de gespa i tumbonas per gaudir dels dies d\'estiu.',
       s2_title: 'Cuina equipada', s2_desc: 'Cuina gran i completament equipada per cuinar per a tot el grup. Forn, vitroceràmica, nevera gran i tots els estris.',
@@ -891,6 +914,7 @@
       sobre_body1: 'Casa Vella del Cuní es una masía de piedra del siglo XVII situada en Roda de Ter, en el corazón de la llanura de Vic. Conserva la estructura original con arcos de medio punto, vigas de madera y paredes de piedra, combinadas con las comodidades modernas necesarias para un descanso completo.',
       sobre_body2: 'Jordi y la familia la ponen a disposición de grupos que buscan un espacio privado, amplio y auténtico: celebraciones familiares, escapadas entre amigos, retiros de empresa o estancias rurales tranquilas.',
       galeria_tag: 'Imágenes', galeria_title: 'La casa<br><em>por dentro y por fuera</em>',
+      gf_all: 'Todas', gf_ext: 'Exterior', gf_int: 'Interiores', gf_hab: 'Habitaciones',
       serveis_tag: 'Comodidades', serveis_title: 'Todo lo que<br><em>necesitas</em>',
       s1_title: 'Piscina privada', s1_desc: 'Piscina exterior de uso exclusivo, con zona de césped y tumbonas para disfrutar los días de verano.',
       s2_title: 'Cocina equipada', s2_desc: 'Cocina grande y completamente equipada para cocinar para todo el grupo. Horno, vitrocerámica, nevera grande y todos los utensilios.',
@@ -947,6 +971,7 @@
       sobre_body1: 'Casa Vella del Cuní is a 17th-century stone farmhouse in Roda de Ter, in the heart of the Vic plain. It preserves its original structure with arched doorways, wooden beams and stone walls, combined with modern comforts for a complete rest.',
       sobre_body2: 'Jordi and his family make it available to groups looking for a private, spacious and authentic space: family celebrations, friend getaways, company retreats or peaceful rural stays.',
       galeria_tag: 'Photos', galeria_title: 'The house<br><em>inside and out</em>',
+      gf_all: 'All', gf_ext: 'Exterior', gf_int: 'Interiors', gf_hab: 'Bedrooms',
       serveis_tag: 'Amenities', serveis_title: 'Everything<br><em>you need</em>',
       s1_title: 'Private pool', s1_desc: 'Outdoor pool for exclusive use, with lawn area and sun loungers to enjoy summer days.',
       s2_title: 'Fully equipped kitchen', s2_desc: 'Large, fully equipped kitchen for cooking for the whole group. Oven, hob, large fridge and all utensils.',
@@ -1082,6 +1107,16 @@
       } else {
         item.classList.add('hidden');
       }
+    });
+  };
+
+  /* ---- GALLERY TABS ---- */
+  window.filterTab = function (btn, cat) {
+    document.querySelectorAll('.gtab').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.masonry-item').forEach(function (item) {
+      var show = cat === 'all' || item.getAttribute('data-cat') === cat;
+      item.classList.toggle('hidden', !show);
     });
   };
 
