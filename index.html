@@ -7,7 +7,7 @@
   <meta name="description" content="Masia rural del 1682 a Roda de Ter (Osona). Lloguer íntegre per a grups, fins a 16 persones. Entorn natural, piscina i gastronomia local. Reserva via WhatsApp.">
   <meta property="og:title" content="Casa Vella del Cuní — Masia 1682 · Roda de Ter">
   <meta property="og:description" content="Masia rural del 1682 a Roda de Ter (Osona). Lloguer íntegre per a grups, fins a 16 persones.">
-  <meta property="og:image" content="img/fotos-noves/IMG_7718.jpeg">
+  <meta property="og:image" content="fotos-noves/IMG_7718.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -73,7 +73,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background: url('img/fotos-noves/IMG_7718.jpeg') center/cover no-repeat;
+      background: url('fotos-noves/IMG_7718.jpeg') center/cover no-repeat;
     }
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
@@ -121,24 +121,21 @@
 
     /* GALERIA */
     #galeria { background: var(--bg-warm); }
-    .galeria-header { max-width: 1200px; margin: 0 auto 48px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .galeria-header { max-width: 1280px; margin: 0 auto 48px; }
+    .galeria-filters { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 24px; }
+    .gf-btn { background: none; border: 1px solid rgba(196,151,74,0.35); border-radius: 20px; padding: 7px 18px; font-family: var(--ff-body); font-size: 12px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); cursor: pointer; transition: all 0.2s; }
+    .gf-btn.active, .gf-btn:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
     .galeria-grid {
-      max-width: 1200px; margin: 0 auto;
+      max-width: 1280px; margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 280px 280px;
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
     }
-    .galeria-grid .g1 { grid-column: 1 / 6; grid-row: 1; }
-    .galeria-grid .g2 { grid-column: 6 / 9; grid-row: 1; }
-    .galeria-grid .g3 { grid-column: 9 / 13; grid-row: 1; }
-    .galeria-grid .g4 { grid-column: 1 / 4; grid-row: 2; }
-    .galeria-grid .g5 { grid-column: 4 / 8; grid-row: 2; }
-    .galeria-grid .g6 { grid-column: 8 / 11; grid-row: 2; }
-    .galeria-grid .g7 { grid-column: 11 / 13; grid-row: 2; }
-    .galeria-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: 2px; display: block; transition: transform 0.5s var(--ease); cursor: pointer; }
-    .galeria-grid img:hover { transform: scale(1.03); }
-    .galeria-grid > div { overflow: hidden; border-radius: 2px; }
+    .galeria-grid .g-item { overflow: hidden; border-radius: 2px; aspect-ratio: 4/3; }
+    .galeria-grid .g-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+    .galeria-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s var(--ease); cursor: pointer; }
+    .galeria-grid img:hover { transform: scale(1.04); }
+    .g-item.hidden { display: none; }
 
     /* SERVEIS */
     #serveis { background: var(--white); }
@@ -256,14 +253,8 @@
       .com-arribar { grid-template-columns: repeat(3, 1fr); }
       .faq-inner { grid-template-columns: 1fr; gap: 40px; }
       .contacte-inner { grid-template-columns: 1fr; gap: 48px; }
-      .galeria-grid { grid-template-columns: repeat(6, 1fr); grid-template-rows: 220px 220px; }
-      .galeria-grid .g1 { grid-column: 1 / 4; }
-      .galeria-grid .g2 { grid-column: 4 / 7; }
-      .galeria-grid .g3 { grid-column: 1 / 3; grid-row: 2; }
-      .galeria-grid .g4 { grid-column: 3 / 5; grid-row: 2; }
-      .galeria-grid .g5 { grid-column: 5 / 7; grid-row: 2; }
-      .galeria-grid .g6 { display: none; }
-      .galeria-grid .g7 { display: none; }
+      .galeria-grid { grid-template-columns: repeat(3, 1fr); }
+      .galeria-grid .g-item.wide { grid-column: span 2; }
       .stats-bar { gap: 0; }
       .stat { padding: 12px 24px; }
     }
@@ -277,16 +268,10 @@
       .serveis-grid { grid-template-columns: 1fr; }
       .entorn-grid { grid-template-columns: 1fr 1fr; }
       .com-arribar { grid-template-columns: 1fr; }
-      .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; }
-      .galeria-grid .g1 { grid-column: 1 / -1; }
-      .galeria-grid .g2 { grid-column: 1; grid-row: 2; }
-      .galeria-grid .g3 { grid-column: 2; grid-row: 2; }
-      .galeria-grid .g4 { grid-column: 1; grid-row: 3; }
-      .galeria-grid .g5 { grid-column: 2; grid-row: 3; }
-      .galeria-grid .g6 { display: none; }
-      .galeria-grid .g7 { display: none; }
+      .galeria-grid { grid-template-columns: 1fr 1fr; }
+      .galeria-grid .g-item.wide { grid-column: 1 / -1; }
       .form-row { grid-template-columns: 1fr; }
-      .galeria-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+
       .footer-inner { flex-direction: column; text-align: center; }
       .footer-links { flex-wrap: wrap; justify-content: center; }
     }
@@ -387,9 +372,9 @@
       <p class="sobre-body" data-i18n="sobre_body2">El Jordi i la família la posen a disposició de grups que busquen un espai privat, ampli i autèntic: celebracions familiars, escapades entre amics, retirs d'empresa o estades rurals tranquil·les.</p>
     </div>
     <div class="sobre-imgs reveal">
-      <img src="img/fotos-noves/IMG_7748.jpeg" alt="Exterior masia" loading="lazy">
-      <img src="img/fotos hab/IMG_2602.jpg" alt="Interior" loading="lazy">
-      <img src="img/fotos-noves/IMG_7730.jpeg" alt="Detall arquitectònic" loading="lazy">
+      <img src="fotos-noves/IMG_7748.jpeg" alt="Exterior masia" loading="lazy">
+      <img src="fotos hab/IMG_2602.jpg" alt="Interior" loading="lazy">
+      <img src="fotos-noves/IMG_7730.jpeg" alt="Detall arquitectònic" loading="lazy">
     </div>
   </div>
 </section>
@@ -397,19 +382,68 @@
 <!-- GALERIA -->
 <section id="galeria">
   <div class="galeria-header reveal">
-    <div>
-      <p class="section-tag" data-i18n="galeria_tag">Imatges</p>
-      <h2 class="section-title" data-i18n="galeria_title">La casa<br><em>per dins i per fora</em></h2>
+    <p class="section-tag" data-i18n="galeria_tag">Imatges</p>
+    <h2 class="section-title" data-i18n="galeria_title">La casa<br><em>per dins i per fora</em></h2>
+    <div class="galeria-filters">
+      <button class="gf-btn active" onclick="filterGal(this,'all')" data-i18n="gf_all">Totes</button>
+      <button class="gf-btn" onclick="filterGal(this,'exterior')" data-i18n="gf_ext">Exterior</button>
+      <button class="gf-btn" onclick="filterGal(this,'interior')" data-i18n="gf_int">Interiors</button>
+      <button class="gf-btn" onclick="filterGal(this,'hab')" data-i18n="gf_hab">Habitacions</button>
     </div>
   </div>
-  <div class="galeria-grid reveal">
-    <div class="g1"><img src="img/fotos-noves/IMG_7711.jpeg" alt="Exterior" onclick="openLightbox(this.src)"></div>
-    <div class="g2"><img src="img/fotos casavella abril/IMG_2603.jpg" alt="Façana" onclick="openLightbox(this.src)"></div>
-    <div class="g3"><img src="img/fotos hab/IMG_1884.png" alt="Habitació" onclick="openLightbox(this.src)"></div>
-    <div class="g4"><img src="img/fotos-noves/IMG_7722.jpeg" alt="Jardí" onclick="openLightbox(this.src)"></div>
-    <div class="g5"><img src="img/fotos booking/fotos 1/cuina.PNG" alt="Cuina" onclick="openLightbox(this.src)"></div>
-    <div class="g6"><img src="img/fotos hab/IMG_1895.png" alt="Bany" onclick="openLightbox(this.src)"></div>
-    <div class="g7"><img src="img/fotos-noves/IMG_7746.jpeg" alt="Detall" onclick="openLightbox(this.src)"></div>
+  <div class="galeria-grid reveal" id="galeria-grid">
+    <div class="g-item wide" data-cat="exterior"><img src="fotos-noves/IMG_7718.jpeg" alt="Facade" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7748.jpeg" alt="Exterior masia" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7711.jpeg" alt="Exterior 2" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7722.jpeg" alt="Jardi" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7724.jpeg" alt="Entrada" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7730.jpeg" alt="Detall" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7732.jpeg" alt="Terrassa" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7733.jpeg" alt="Entorn" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7743.jpeg" alt="Vistes" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7744.jpeg" alt="Exterior tardor" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7746.jpeg" alt="Pati" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7747.jpeg" alt="Entrada principal" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos-noves/IMG_7753.jpeg" alt="Paisatge" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos casavella abril/IMG_2581.jpg" alt="Primavera" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos casavella abril/IMG_2588.jpg" alt="Exterior abril" onclick="openLightbox(this.src)"></div>
+    <div class="g-item wide" data-cat="exterior"><img src="fotos casavella abril/IMG_2603.jpg" alt="Facade abril" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos casavella abril/IMG_2621.jpg" alt="Jardi abril" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos casavella abril/IMG_2647.JPG" alt="Exterior" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="exterior"><img src="fotos casavella abril/IMG_2652.JPG" alt="Detall" onclick="openLightbox(this.src)"></div>
+    <div class="g-item wide" data-cat="interior"><img src="fotos booking/fotos 1/menjador general.PNG" alt="Menjador general" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/cuina.PNG" alt="Cuina" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/cuinaa.PNG" alt="Cuina 2" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/foto menjador.PNG" alt="Menjador" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/menjador 2.PNG" alt="Menjador 2" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/menjadorr.PNG" alt="Menjador 3" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/escales.PNG" alt="Escales" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/lavabo.PNG" alt="Lavabo" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/cuni fora.PNG" alt="Vista exterior" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/cales.PNG" alt="Detall cales" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/cantirs.PNG" alt="Cantirs" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/cuadre menjador 2.PNG" alt="Detall menjador" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="interior"><img src="fotos booking/fotos 1/suite.PNG" alt="Suite" onclick="openLightbox(this.src)"></div>
+    <div class="g-item wide" data-cat="hab"><img src="fotos hab/IMG_2602.jpg" alt="Habitacio doble" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1884.png" alt="Habitacio" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1886.png" alt="Habitacio 2" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1888.png" alt="Habitacio 3" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1889.png" alt="Habitacio 4" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1891.png" alt="Habitacio 5" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1893.png" alt="Habitacio 6" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1895.png" alt="Habitacio 7" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1899.png" alt="Habitacio 8" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1902.png" alt="Habitacio 9" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1907.JPG" alt="Habitacio 10" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1909.png" alt="Habitacio 11" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_1912.png" alt="Habitacio 12" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_2575.jpg" alt="Habitacio" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_2579.jpg" alt="Habitacio" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_2593.jpg" alt="Habitacio" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_2597.jpg" alt="Habitacio" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_2598.jpg" alt="Habitacio" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/IMG_2604.jpg" alt="Habitacio" onclick="openLightbox(this.src)"></div>
+    <div class="g-item" data-cat="hab"><img src="fotos hab/NPED0827.JPG" alt="Habitacio" onclick="openLightbox(this.src)"></div>
   </div>
 </section>
 
@@ -481,7 +515,7 @@
     </div>
     <div class="entorn-grid reveal">
       <div class="entorn-card">
-        <img src="img/fotos-noves/IMG_7733.jpeg" alt="Entorn natural" loading="lazy">
+        <img src="fotos-noves/IMG_7733.jpeg" alt="Entorn natural" loading="lazy">
         <div class="entorn-overlay"></div>
         <div class="entorn-text">
           <div class="entorn-name" data-i18n="e1_name">Riu Ter</div>
@@ -489,7 +523,7 @@
         </div>
       </div>
       <div class="entorn-card">
-        <img src="img/fotos casavella abril/IMG_2612.JPG" alt="Camps" loading="lazy">
+        <img src="fotos casavella abril/IMG_2612.JPG" alt="Camps" loading="lazy">
         <div class="entorn-overlay"></div>
         <div class="entorn-text">
           <div class="entorn-name" data-i18n="e2_name">Plana de Vic</div>
@@ -497,7 +531,7 @@
         </div>
       </div>
       <div class="entorn-card">
-        <img src="img/Fotos Casa Vella/IMG_0359.JPG" alt="Mercat Vic" loading="lazy">
+        <img src="Fotos Casa Vella/IMG_0359.JPG" alt="Mercat Vic" loading="lazy">
         <div class="entorn-overlay"></div>
         <div class="entorn-text">
           <div class="entorn-name" data-i18n="e3_name">Vic · Mercat</div>
@@ -505,7 +539,7 @@
         </div>
       </div>
       <div class="entorn-card">
-        <img src="img/fotos-noves/IMG_7743.jpeg" alt="Rutes" loading="lazy">
+        <img src="fotos-noves/IMG_7743.jpeg" alt="Rutes" loading="lazy">
         <div class="entorn-overlay"></div>
         <div class="entorn-text">
           <div class="entorn-name" data-i18n="e4_name">Rutes BTT/Senderisme</div>
@@ -712,6 +746,7 @@
       sobre_body1: "La Casa Vella del Cuní és una masia de pedra del segle XVII situada a Roda de Ter, al cor de la plana de Vic. Conserva l'estructura original amb arcs de mig punt, bigues de fusta i parets de pedra, combinades amb les comoditats modernes necessàries per a un descans complet.",
       sobre_body2: "El Jordi i la família la posen a disposició de grups que busquen un espai privat, ampli i autèntic: celebracions familiars, escapades entre amics, retirs d'empresa o estades rurals tranquil·les.",
       galeria_tag: 'Imatges', galeria_title: 'La casa<br><em>per dins i per fora</em>',
+      gf_all: 'Totes', gf_ext: 'Exterior', gf_int: 'Interiors', gf_hab: 'Habitacions',
       serveis_tag: 'Comoditats', serveis_title: 'Tot el que<br><em>necessites</em>',
       s1_title: 'Piscina privada', s1_desc: 'Piscina exterior d\'ús exclusiu, amb zona de gespa i tumbonas per gaudir dels dies d\'estiu.',
       s2_title: 'Cuina equipada', s2_desc: 'Cuina gran i completament equipada per cuinar per a tot el grup. Forn, vitroceràmica, nevera gran i tots els estris.',
@@ -768,6 +803,7 @@
       sobre_body1: 'Casa Vella del Cuní es una masía de piedra del siglo XVII situada en Roda de Ter, en el corazón de la llanura de Vic. Conserva la estructura original con arcos de medio punto, vigas de madera y paredes de piedra, combinadas con las comodidades modernas necesarias para un descanso completo.',
       sobre_body2: 'Jordi y la familia la ponen a disposición de grupos que buscan un espacio privado, amplio y auténtico: celebraciones familiares, escapadas entre amigos, retiros de empresa o estancias rurales tranquilas.',
       galeria_tag: 'Imágenes', galeria_title: 'La casa<br><em>por dentro y por fuera</em>',
+      gf_all: 'Todas', gf_ext: 'Exterior', gf_int: 'Interiores', gf_hab: 'Habitaciones',
       serveis_tag: 'Comodidades', serveis_title: 'Todo lo que<br><em>necesitas</em>',
       s1_title: 'Piscina privada', s1_desc: 'Piscina exterior de uso exclusivo, con zona de césped y tumbonas para disfrutar los días de verano.',
       s2_title: 'Cocina equipada', s2_desc: 'Cocina grande y completamente equipada para cocinar para todo el grupo. Horno, vitrocerámica, nevera grande y todos los utensilios.',
@@ -824,6 +860,7 @@
       sobre_body1: 'Casa Vella del Cuní is a 17th-century stone farmhouse in Roda de Ter, in the heart of the Vic plain. It preserves its original structure with arched doorways, wooden beams and stone walls, combined with modern comforts for a complete rest.',
       sobre_body2: 'Jordi and his family make it available to groups looking for a private, spacious and authentic space: family celebrations, friend getaways, company retreats or peaceful rural stays.',
       galeria_tag: 'Photos', galeria_title: 'The house<br><em>inside and out</em>',
+      gf_all: 'All', gf_ext: 'Exterior', gf_int: 'Interiors', gf_hab: 'Bedrooms',
       serveis_tag: 'Amenities', serveis_title: 'Everything<br><em>you need</em>',
       s1_title: 'Private pool', s1_desc: 'Outdoor pool for exclusive use, with lawn area and sun loungers to enjoy summer days.',
       s2_title: 'Fully equipped kitchen', s2_desc: 'Large, fully equipped kitchen for cooking for the whole group. Oven, hob, large fridge and all utensils.',
@@ -948,6 +985,19 @@
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeLightbox();
   });
+
+  /* ---- GALLERY FILTER ---- */
+  window.filterGal = function (btn, cat) {
+    document.querySelectorAll('.gf-btn').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.g-item').forEach(function (item) {
+      if (cat === 'all' || item.getAttribute('data-cat') === cat) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  };
 
   /* ---- WHATSAPP FORM ---- */
   window.sendWhatsApp = function () {
