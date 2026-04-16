@@ -426,24 +426,7 @@
       width: max-content;
       will-change: transform;
     }
-    @keyframes auto-scroll-ltr {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    @keyframes auto-scroll-rtl {
-      0%   { transform: translateX(-50%); }
-      100% { transform: translateX(0); }
-    }
-    .scroll-ltr {
-      animation: auto-scroll-ltr 45s linear infinite;
-    }
-    .scroll-rtl {
-      animation: auto-scroll-rtl 45s linear infinite;
-    }
-    .carousel-track-wrap:hover .scroll-ltr,
-    .carousel-track-wrap:hover .scroll-rtl {
-      animation-play-state: paused;
-    }
+
     .gallery-item {
       position: relative; border-radius: 8px;
       overflow: hidden; aspect-ratio: 4/3;
@@ -2218,12 +2201,27 @@
     function setupScroll(id, dir) {
       var track = document.getElementById('carousel-' + id);
       if (!track) return;
-      /* Duplicate items so the loop is seamless */
       Array.from(track.children).forEach(function(item) {
         track.appendChild(item.cloneNode(true));
       });
-      /* CSS animation handles the movement — no GSAP timing issues */
-      track.classList.add('scroll-' + dir);
+      setTimeout(function() {
+        var halfW = track.scrollWidth / 2;
+        if (!halfW) return;
+        var x = dir === 'rtl' ? -halfW : 0;
+        var speed = dir === 'ltr' ? -0.45 : 0.45;
+        var paused = false;
+        track.parentElement.addEventListener('mouseenter', function() { paused = true; });
+        track.parentElement.addEventListener('mouseleave', function() { paused = false; });
+        (function tick() {
+          if (!paused) {
+            x += speed;
+            if (dir === 'ltr' && x <= -halfW) x += halfW;
+            if (dir === 'rtl' && x >= 0) x -= halfW;
+            track.style.transform = 'translateX(' + x + 'px)';
+          }
+          requestAnimationFrame(tick);
+        })();
+      }, 300);
     }
     setupScroll('ext', 'ltr');
     setupScroll('int', 'rtl');
