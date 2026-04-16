@@ -120,91 +120,26 @@
     .sobre-imgs img:not(:first-child) { height: 180px; }
 
     /* GALERIA */
-    #galeria { background: var(--dark); padding: 80px 40px; }
+    #galeria { background: var(--dark); padding: 80px 0; }
     #galeria .section-title { color: var(--white); }
-    .galeria-header { max-width: 1280px; margin: 0 auto 40px; }
-
-    /* PREVIEW GRID */
-    .preview-grid {
-      max-width: 1280px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      grid-template-rows: 260px 260px;
-      gap: 8px;
+    .galeria-header { max-width: 1280px; margin: 0 auto 40px; padding: 0 40px; }
+    .carousel {
+      display: flex; gap: 10px; padding: 0 40px 20px;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch; cursor: grab;
     }
-    .preview-grid .p1 { grid-column: 1; grid-row: 1 / 3; }
-    .preview-grid .p2 { grid-column: 2; grid-row: 1; }
-    .preview-grid .p3 { grid-column: 3; grid-row: 1; }
-    .preview-grid .p4 { grid-column: 2; grid-row: 2; }
-    .preview-grid .p-more {
-      grid-column: 3; grid-row: 2;
-      position: relative; overflow: hidden; border-radius: 4px; cursor: pointer;
+    .carousel:active { cursor: grabbing; }
+    .carousel::-webkit-scrollbar { height: 4px; }
+    .carousel::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
+    .carousel::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+    .carousel-item {
+      flex: 0 0 370px; width: 370px; height: 260px;
+      scroll-snap-align: start; overflow: hidden; border-radius: 4px; cursor: pointer;
     }
-    .preview-grid > div:not(.p-more) { overflow: hidden; border-radius: 4px; cursor: pointer; }
-    .preview-grid img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-    .preview-grid > div:hover img { transform: scale(1.05); }
-    .p-more img { filter: brightness(0.35); }
-    .p-more:hover img { transform: scale(1.05); }
-    .p-more-label {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      color: white; pointer-events: none;
-    }
-    .p-more-plus { font-size: 2.5rem; font-weight: 200; line-height: 1; }
-    .p-more-text { font-family: var(--ff-body); font-size: 12px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; margin-top: 6px; color: rgba(255,255,255,0.8); }
-
-    /* GALLERY MODAL */
-    .gmodal {
-      display: none; position: fixed; inset: 0; z-index: 9000;
-      background: rgba(10,7,4,0.97); overflow-y: auto;
-      padding: 0;
-    }
-    .gmodal.open { display: block; }
-    .gmodal-header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(10,7,4,0.95); backdrop-filter: blur(8px);
-      padding: 20px 32px; display: flex; align-items: center; justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .gmodal-title { font-family: var(--ff-display); font-size: 1.4rem; font-weight: 300; color: var(--white); }
-    .gmodal-title span { color: var(--gold); font-style: italic; }
-    .gmodal-tabs { display: flex; gap: 8px; }
-    .gmodal-close {
-      background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%;
-      width: 40px; height: 40px; color: white; font-size: 18px; cursor: pointer;
-      display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0;
-    }
-    .gmodal-close:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
-    .gmodal-body { padding: 24px 32px 48px; }
-    .gmodal-masonry {
-      columns: 4; column-gap: 10px;
-    }
-    .gmodal-item {
-      break-inside: avoid; margin-bottom: 10px;
-      overflow: hidden; border-radius: 4px; cursor: pointer;
-    }
-    .gmodal-item img { width: 100%; display: block; transition: transform 0.4s ease; }
-    .gmodal-item:hover img { transform: scale(1.04); }
-    .gmodal-item.hidden { display: none; }
-    .gtab {
-      background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px;
-      padding: 6px 16px; font-family: var(--ff-body); font-size: 11px; font-weight: 400;
-      letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.5);
-      cursor: pointer; transition: all 0.2s;
-    }
-    .gtab.active, .gtab:hover { background: var(--gold); border-color: var(--gold); color: var(--dark); }
-    @media (max-width: 1024px) { .gmodal-masonry { columns: 3; } }
-    @media (max-width: 640px)  {
-      .gmodal-masonry { columns: 2; }
-      .preview-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px; }
-      .preview-grid .p1 { grid-column: 1 / -1; grid-row: 1; }
-      .preview-grid .p2 { grid-column: 1; grid-row: 2; }
-      .preview-grid .p3 { display: none; }
-      .preview-grid .p4 { display: none; }
-      .preview-grid .p-more { grid-column: 2; grid-row: 2; }
-      .gmodal-header { flex-wrap: wrap; gap: 12px; }
-      .gmodal-tabs { order: 3; width: 100%; }
-    }
+    .carousel-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .carousel-item:hover img { transform: scale(1.04); }
+    @media (max-width: 900px) { .carousel-item { flex: 0 0 280px; width: 280px; } }
+    @media (max-width: 600px) { .carousel-item { flex: 0 0 240px; width: 240px; height: 200px; } }
 
     /* SERVEIS */
     #serveis { background: var(--white); }
@@ -450,191 +385,165 @@
     <p class="section-tag" data-i18n="galeria_tag">Imatges</p>
     <h2 class="section-title" data-i18n="galeria_title">La casa<br><em>per dins i per fora</em></h2>
   </div>
-  <div class="preview-grid reveal">
-    <div class="p1" onclick="openGallery('all')"><img src="fotos-noves/IMG_7718.jpeg" alt="Facade" loading="eager"></div>
-    <div class="p2" onclick="openGallery('all')"><img src="fotos-noves/IMG_7730.jpeg" alt="Detall" loading="eager"></div>
-    <div class="p3" onclick="openGallery('all')"><img src="fotos hab/IMG_2602.jpg" alt="Habitacio" loading="eager"></div>
-    <div class="p4" onclick="openGallery('all')"><img src="fotos booking/fotos 1/menjador general.PNG" alt="Menjador" loading="eager"></div>
-    <div class="p-more" onclick="openGallery('all')">
-      <img src="fotos-noves/IMG_7748.jpeg" alt="Mes fotos" loading="eager">
-      <div class="p-more-label">
-        <div class="p-more-plus">+</div>
-        <div class="p-more-text" data-i18n="gallery_more">Veure les 51 fotos</div>
-      </div>
+  <div class="carousel" id="carousel">
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7718.jpeg')">
+      <img src="fotos-noves/IMG_7718.jpeg" alt="Facade principal" loading="eager">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7748.jpeg')">
+      <img src="fotos-noves/IMG_7748.jpeg" alt="Exterior masia" loading="eager">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7711.jpeg')">
+      <img src="fotos-noves/IMG_7711.jpeg" alt="Exterior 2" loading="eager">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7722.jpeg')">
+      <img src="fotos-noves/IMG_7722.jpeg" alt="Jardi" loading="eager">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7724.jpeg')">
+      <img src="fotos-noves/IMG_7724.jpeg" alt="Entrada" loading="eager">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7730.jpeg')">
+      <img src="fotos-noves/IMG_7730.jpeg" alt="Detall pedra" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7732.jpeg')">
+      <img src="fotos-noves/IMG_7732.jpeg" alt="Terrassa" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7733.jpeg')">
+      <img src="fotos-noves/IMG_7733.jpeg" alt="Entorn natural" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7743.jpeg')">
+      <img src="fotos-noves/IMG_7743.jpeg" alt="Vistes" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7744.jpeg')">
+      <img src="fotos-noves/IMG_7744.jpeg" alt="Exterior tardor" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7746.jpeg')">
+      <img src="fotos-noves/IMG_7746.jpeg" alt="Pati interior" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7747.jpeg')">
+      <img src="fotos-noves/IMG_7747.jpeg" alt="Entrada principal" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos-noves/IMG_7753.jpeg')">
+      <img src="fotos-noves/IMG_7753.jpeg" alt="Paisatge" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos casavella abril/IMG_2581.jpg')">
+      <img src="fotos casavella abril/IMG_2581.jpg" alt="Primavera" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos casavella abril/IMG_2588.jpg')">
+      <img src="fotos casavella abril/IMG_2588.jpg" alt="Exterior abril" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos casavella abril/IMG_2603.jpg')">
+      <img src="fotos casavella abril/IMG_2603.jpg" alt="Facade abril" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos casavella abril/IMG_2621.jpg')">
+      <img src="fotos casavella abril/IMG_2621.jpg" alt="Jardi abril" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos casavella abril/IMG_2647.JPG')">
+      <img src="fotos casavella abril/IMG_2647.JPG" alt="Exterior" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos casavella abril/IMG_2652.JPG')">
+      <img src="fotos casavella abril/IMG_2652.JPG" alt="Detall" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/menjador general.PNG')">
+      <img src="fotos booking/fotos 1/menjador general.PNG" alt="Menjador general" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/cuina.PNG')">
+      <img src="fotos booking/fotos 1/cuina.PNG" alt="Cuina" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/cuinaa.PNG')">
+      <img src="fotos booking/fotos 1/cuinaa.PNG" alt="Cuina 2" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/foto menjador.PNG')">
+      <img src="fotos booking/fotos 1/foto menjador.PNG" alt="Menjador" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/menjador 2.PNG')">
+      <img src="fotos booking/fotos 1/menjador 2.PNG" alt="Menjador 2" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/menjadorr.PNG')">
+      <img src="fotos booking/fotos 1/menjadorr.PNG" alt="Menjador 3" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/escales.PNG')">
+      <img src="fotos booking/fotos 1/escales.PNG" alt="Escales" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/lavabo.PNG')">
+      <img src="fotos booking/fotos 1/lavabo.PNG" alt="Lavabo" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/cuni fora.PNG')">
+      <img src="fotos booking/fotos 1/cuni fora.PNG" alt="Vista exterior" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/cales.PNG')">
+      <img src="fotos booking/fotos 1/cales.PNG" alt="Detall cales" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/cantirs.PNG')">
+      <img src="fotos booking/fotos 1/cantirs.PNG" alt="Cantirs" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/cuadre menjador 2.PNG')">
+      <img src="fotos booking/fotos 1/cuadre menjador 2.PNG" alt="Quadre menjador" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos booking/fotos 1/suite.PNG')">
+      <img src="fotos booking/fotos 1/suite.PNG" alt="Suite" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_2602.jpg')">
+      <img src="fotos hab/IMG_2602.jpg" alt="Habitacio doble" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1884.png')">
+      <img src="fotos hab/IMG_1884.png" alt="Habitacio" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1886.png')">
+      <img src="fotos hab/IMG_1886.png" alt="Habitacio 2" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1888.png')">
+      <img src="fotos hab/IMG_1888.png" alt="Habitacio 3" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1889.png')">
+      <img src="fotos hab/IMG_1889.png" alt="Habitacio 4" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1891.png')">
+      <img src="fotos hab/IMG_1891.png" alt="Habitacio 5" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1893.png')">
+      <img src="fotos hab/IMG_1893.png" alt="Habitacio 6" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1895.png')">
+      <img src="fotos hab/IMG_1895.png" alt="Habitacio 7" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1899.png')">
+      <img src="fotos hab/IMG_1899.png" alt="Habitacio 8" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1902.png')">
+      <img src="fotos hab/IMG_1902.png" alt="Habitacio 9" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1907.JPG')">
+      <img src="fotos hab/IMG_1907.JPG" alt="Habitacio 10" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1909.png')">
+      <img src="fotos hab/IMG_1909.png" alt="Habitacio 11" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_1912.png')">
+      <img src="fotos hab/IMG_1912.png" alt="Habitacio 12" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_2575.jpg')">
+      <img src="fotos hab/IMG_2575.jpg" alt="Habitacio vista" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_2579.jpg')">
+      <img src="fotos hab/IMG_2579.jpg" alt="Habitacio llum" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_2593.jpg')">
+      <img src="fotos hab/IMG_2593.jpg" alt="Habitacio amplia" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_2597.jpg')">
+      <img src="fotos hab/IMG_2597.jpg" alt="Habitacio detall" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_2598.jpg')">
+      <img src="fotos hab/IMG_2598.jpg" alt="Habitacio bany" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/IMG_2604.jpg')">
+      <img src="fotos hab/IMG_2604.jpg" alt="Habitacio suite" loading="lazy">
+    </div>
+    <div class="carousel-item" onclick="openLightbox('fotos hab/NPED0827.JPG')">
+      <img src="fotos hab/NPED0827.JPG" alt="Habitacio gran" loading="lazy">
     </div>
   </div>
 </section>
-
-<!-- GALLERY MODAL -->
-<div class="gmodal" id="gmodal">
-  <div class="gmodal-header">
-    <div class="gmodal-title">Casa Vella <span>del Cuní</span></div>
-    <div class="gmodal-tabs">
-      <button class="gtab active" onclick="filterGmodal(this,'all')" data-i18n="gf_all">Totes</button>
-      <button class="gtab" onclick="filterGmodal(this,'ext')" data-i18n="gf_ext">Exterior</button>
-      <button class="gtab" onclick="filterGmodal(this,'int')" data-i18n="gf_int">Interiors</button>
-      <button class="gtab" onclick="filterGmodal(this,'hab')" data-i18n="gf_hab">Habitacions</button>
-    </div>
-    <button class="gmodal-close" onclick="closeGallery()">✕</button>
-  </div>
-  <div class="gmodal-body">
-    <div class="gmodal-masonry">
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7748.jpeg')">
-        <img src="fotos-noves/IMG_7748.jpeg" alt="Exterior masia" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7711.jpeg')">
-        <img src="fotos-noves/IMG_7711.jpeg" alt="Exterior 2" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7722.jpeg')">
-        <img src="fotos-noves/IMG_7722.jpeg" alt="Jardi" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7724.jpeg')">
-        <img src="fotos-noves/IMG_7724.jpeg" alt="Entrada" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7730.jpeg')">
-        <img src="fotos-noves/IMG_7730.jpeg" alt="Detall pedra" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7732.jpeg')">
-        <img src="fotos-noves/IMG_7732.jpeg" alt="Terrassa" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7733.jpeg')">
-        <img src="fotos-noves/IMG_7733.jpeg" alt="Entorn" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7743.jpeg')">
-        <img src="fotos-noves/IMG_7743.jpeg" alt="Vistes" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7744.jpeg')">
-        <img src="fotos-noves/IMG_7744.jpeg" alt="Exterior tardor" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7746.jpeg')">
-        <img src="fotos-noves/IMG_7746.jpeg" alt="Pati" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7747.jpeg')">
-        <img src="fotos-noves/IMG_7747.jpeg" alt="Entrada principal" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos-noves/IMG_7753.jpeg')">
-        <img src="fotos-noves/IMG_7753.jpeg" alt="Paisatge" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2581.jpg')">
-        <img src="fotos casavella abril/IMG_2581.jpg" alt="Primavera" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2588.jpg')">
-        <img src="fotos casavella abril/IMG_2588.jpg" alt="Exterior abril" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2603.jpg')">
-        <img src="fotos casavella abril/IMG_2603.jpg" alt="Facade abril" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2621.jpg')">
-        <img src="fotos casavella abril/IMG_2621.jpg" alt="Jardi abril" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2647.JPG')">
-        <img src="fotos casavella abril/IMG_2647.JPG" alt="Exterior" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="ext" onclick="openLightbox('fotos casavella abril/IMG_2652.JPG')">
-        <img src="fotos casavella abril/IMG_2652.JPG" alt="Detall" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/menjador general.PNG')">
-        <img src="fotos booking/fotos 1/menjador general.PNG" alt="Menjador general" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuina.PNG')">
-        <img src="fotos booking/fotos 1/cuina.PNG" alt="Cuina" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuinaa.PNG')">
-        <img src="fotos booking/fotos 1/cuinaa.PNG" alt="Cuina 2" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/foto menjador.PNG')">
-        <img src="fotos booking/fotos 1/foto menjador.PNG" alt="Menjador" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/menjador 2.PNG')">
-        <img src="fotos booking/fotos 1/menjador 2.PNG" alt="Menjador 2" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/menjadorr.PNG')">
-        <img src="fotos booking/fotos 1/menjadorr.PNG" alt="Menjador 3" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/escales.PNG')">
-        <img src="fotos booking/fotos 1/escales.PNG" alt="Escales" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/lavabo.PNG')">
-        <img src="fotos booking/fotos 1/lavabo.PNG" alt="Lavabo" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuni fora.PNG')">
-        <img src="fotos booking/fotos 1/cuni fora.PNG" alt="Vista exterior" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cales.PNG')">
-        <img src="fotos booking/fotos 1/cales.PNG" alt="Detall cales" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cantirs.PNG')">
-        <img src="fotos booking/fotos 1/cantirs.PNG" alt="Cantirs" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/cuadre menjador 2.PNG')">
-        <img src="fotos booking/fotos 1/cuadre menjador 2.PNG" alt="Quadre menjador" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="int" onclick="openLightbox('fotos booking/fotos 1/suite.PNG')">
-        <img src="fotos booking/fotos 1/suite.PNG" alt="Suite" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2602.jpg')">
-        <img src="fotos hab/IMG_2602.jpg" alt="Habitacio doble" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1884.png')">
-        <img src="fotos hab/IMG_1884.png" alt="Habitacio" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1886.png')">
-        <img src="fotos hab/IMG_1886.png" alt="Habitacio 2" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1888.png')">
-        <img src="fotos hab/IMG_1888.png" alt="Habitacio 3" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1889.png')">
-        <img src="fotos hab/IMG_1889.png" alt="Habitacio 4" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1891.png')">
-        <img src="fotos hab/IMG_1891.png" alt="Habitacio 5" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1893.png')">
-        <img src="fotos hab/IMG_1893.png" alt="Habitacio 6" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1895.png')">
-        <img src="fotos hab/IMG_1895.png" alt="Habitacio 7" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1899.png')">
-        <img src="fotos hab/IMG_1899.png" alt="Habitacio 8" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1902.png')">
-        <img src="fotos hab/IMG_1902.png" alt="Habitacio 9" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1907.JPG')">
-        <img src="fotos hab/IMG_1907.JPG" alt="Habitacio 10" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1909.png')">
-        <img src="fotos hab/IMG_1909.png" alt="Habitacio 11" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_1912.png')">
-        <img src="fotos hab/IMG_1912.png" alt="Habitacio 12" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2575.jpg')">
-        <img src="fotos hab/IMG_2575.jpg" alt="Habitacio" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2579.jpg')">
-        <img src="fotos hab/IMG_2579.jpg" alt="Habitacio" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2593.jpg')">
-        <img src="fotos hab/IMG_2593.jpg" alt="Habitacio" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2597.jpg')">
-        <img src="fotos hab/IMG_2597.jpg" alt="Habitacio" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2598.jpg')">
-        <img src="fotos hab/IMG_2598.jpg" alt="Habitacio" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/IMG_2604.jpg')">
-        <img src="fotos hab/IMG_2604.jpg" alt="Habitacio" loading="lazy">
-      </div>
-      <div class="gmodal-item" data-cat="hab" onclick="openLightbox('fotos hab/NPED0827.JPG')">
-        <img src="fotos hab/NPED0827.JPG" alt="Habitacio" loading="lazy">
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -768,7 +677,7 @@
     </div>
     <ul class="faq-list reveal">
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q1">Quin és el nombre mínim i màxim de persones?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -777,7 +686,7 @@
         </div>
       </li>
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q2">Quantes nits és el mínim d'estada?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -786,7 +695,7 @@
         </div>
       </li>
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q3">Hi ha piscina? Quan és oberta?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -795,7 +704,7 @@
         </div>
       </li>
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q4">Es permet fer celebracions o festes?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -804,7 +713,7 @@
         </div>
       </li>
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q5">S'admeten animals de companyia?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -813,7 +722,7 @@
         </div>
       </li>
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q6">Com es fa la reserva i el pagament?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -822,7 +731,7 @@
         </div>
       </li>
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q7">Quins horaris d'entrada i sortida hi ha?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -831,7 +740,7 @@
         </div>
       </li>
       <li class="faq-item">
-        <button class="faq-btn" aria-expanded="false">
+        <button class="faq-btn" aria-expanded="false" onclick="faqToggle(this)">
           <span data-i18n="q8">Què inclou el preu del lloguer?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -916,6 +825,36 @@
     <span data-i18n="footer_copy">© 2024 Casa Vella del Cuní · Roda de Ter, Osona · Masia del 1682</span>
   </div>
 </footer>
+
+<script>
+/* FAQ toggle - global, independent of IIFE */
+window.faqToggle = function(btn) {
+  var isOpen = btn.getAttribute('aria-expanded') === 'true';
+  document.querySelectorAll('.faq-btn').forEach(function(b) {
+    b.setAttribute('aria-expanded', 'false');
+    var body = b.nextElementSibling;
+    if (body) body.style.maxHeight = null;
+  });
+  if (!isOpen) {
+    btn.setAttribute('aria-expanded', 'true');
+    var body = btn.nextElementSibling;
+    if (body) body.style.maxHeight = body.scrollHeight + 'px';
+  }
+};
+/* Carousel drag */
+document.addEventListener('DOMContentLoaded', function() {
+  var c = document.getElementById('carousel');
+  if (!c) return;
+  var isDown = false, startX, scrollLeft;
+  c.addEventListener('mousedown', function(e) { isDown=true; startX=e.pageX-c.offsetLeft; scrollLeft=c.scrollLeft; });
+  c.addEventListener('mouseleave', function() { isDown=false; });
+  c.addEventListener('mouseup', function() { isDown=false; });
+  c.addEventListener('mousemove', function(e) {
+    if (!isDown) return; e.preventDefault();
+    c.scrollLeft = scrollLeft - (e.pageX - c.offsetLeft - startX);
+  });
+});
+</script>
 
 <script>
 (function () {
@@ -1129,26 +1068,6 @@
     menu.classList.toggle('open');
   };
 
-  /* ---- FAQ ACCORDION ---- */
-  function initFaq() {
-    var btns = document.querySelectorAll('.faq-btn');
-    btns.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var isOpen = btn.getAttribute('aria-expanded') === 'true';
-        btns.forEach(function (b) {
-          b.setAttribute('aria-expanded', 'false');
-          var body = b.nextElementSibling;
-          if (body) body.style.maxHeight = null;
-        });
-        if (!isOpen) {
-          btn.setAttribute('aria-expanded', 'true');
-          var body = btn.nextElementSibling;
-          if (body) body.style.maxHeight = body.scrollHeight + 'px';
-        }
-      });
-    });
-  }
-
   /* ---- SCROLL REVEAL ---- */
   function initReveal() {
     var observer = new IntersectionObserver(function (entries) {
@@ -1175,7 +1094,6 @@
     document.body.style.overflow = '';
   };
 
-
   /* ---- GALLERY FILTER ---- */
   window.filterGal = function (btn, cat) {
     document.querySelectorAll('.gf-btn').forEach(function (b) { b.classList.remove('active'); });
@@ -1200,23 +1118,10 @@
   };
 
   /* ---- GALLERY MODAL ---- */
-  window.openGallery = function (cat) {
-    filterGmodal(document.querySelector('.gtab'), cat || 'all');
     document.getElementById('gmodal').classList.add('open');
     document.body.style.overflow = 'hidden';
   };
-  window.closeGallery = function () {
-    document.getElementById('gmodal').classList.remove('open');
     document.body.style.overflow = '';
-  };
-  window.filterGmodal = function (btn, cat) {
-    if (btn) {
-      document.querySelectorAll('.gtab').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-    }
-    document.querySelectorAll('.gmodal-item').forEach(function (item) {
-      item.classList.toggle('hidden', cat !== 'all' && item.getAttribute('data-cat') !== cat);
-    });
   };
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') { closeGallery(); closeLightbox(); }
@@ -1243,14 +1148,14 @@
     window.open('https://wa.me/34630936545?text=' + encodeURIComponent(text), '_blank');
   };
 
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
   /* ---- INIT ---- */
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
-      initFaq();
       initReveal();
     });
   } else {
-    initFaq();
     initReveal();
   }
 })();
