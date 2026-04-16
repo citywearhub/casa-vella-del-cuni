@@ -426,6 +426,24 @@
       width: max-content;
       will-change: transform;
     }
+    @keyframes auto-scroll-ltr {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes auto-scroll-rtl {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .scroll-ltr {
+      animation: auto-scroll-ltr 45s linear infinite;
+    }
+    .scroll-rtl {
+      animation: auto-scroll-rtl 45s linear infinite;
+    }
+    .carousel-track-wrap:hover .scroll-ltr,
+    .carousel-track-wrap:hover .scroll-rtl {
+      animation-play-state: paused;
+    }
     .gallery-item {
       position: relative; border-radius: 8px;
       overflow: hidden; aspect-ratio: 4/3;
@@ -2204,29 +2222,12 @@
     function setupScroll(id, dir) {
       var track = document.getElementById('carousel-' + id);
       if (!track) return;
-      var orig = Array.from(track.children);
-      orig.forEach(function(item) {
-        var c = item.cloneNode(true);
-        c.addEventListener('click', function(){ openLightbox(c); });
-        track.appendChild(c);
+      /* Duplicate items so the loop is seamless */
+      Array.from(track.children).forEach(function(item) {
+        track.appendChild(item.cloneNode(true));
       });
-      requestAnimationFrame(function() {
-        var setW = track.scrollWidth / 2;
-        /* ltr: start at 0, move left to -setW, loop back to 0
-           rtl: start at -setW, move right to 0, loop back to -setW */
-        var startX = dir === 'rtl' ? -setW : 0;
-        var endX   = dir === 'rtl' ? 0 : -setW;
-        gsap.set(track, { x: startX });
-        var tween = gsap.to(track, {
-          x: endX,
-          duration: 40,
-          ease: 'none',
-          repeat: -1,
-          onRepeat: function() { gsap.set(track, { x: startX }); }
-        });
-        track.parentElement.addEventListener('mouseenter', function(){ tween.pause(); });
-        track.parentElement.addEventListener('mouseleave', function(){ tween.resume(); });
-      });
+      /* CSS animation handles the movement — no GSAP timing issues */
+      track.classList.add('scroll-' + dir);
     }
     setupScroll('ext', 'ltr');
     setupScroll('int', 'rtl');
